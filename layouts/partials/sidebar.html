@@ -3,7 +3,7 @@
         <h3 class="widget-title">关于我</h3>
         <div class="widget-body">
             <p>{{ .Site.Params.description | default "这是我的个人博客" }}</p>
-            <a href="/posts/about/" class="widget-link">了解更多 →</a>
+            <a href="{{ "/posts/about/" | relURL }}" class="widget-link">了解更多 →</a>
         </div>
     </div>
 

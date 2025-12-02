@@ -2,10 +2,10 @@
     <div class="widget widget-author-info">
         <h3 class="widget-title">作者</h3>
         <div class="author-box">
-            <a href="/posts/about/" class="author-link">
+            <a href="{{ "/posts/about/" | relURL }}" class="author-link">
                 <div class="author-avatar">
                     {{ if (fileExists "static/images/avatar.jpg") }}
-                    <img src="/images/avatar.jpg" alt="{{ .Site.Params.author }}" />
+                    <img src="{{ "images/avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" />
                     {{ else }}
                     <div class="avatar-placeholder">{{ substr .Site.Params.author 0 1 }}</div>
                     {{ end }}

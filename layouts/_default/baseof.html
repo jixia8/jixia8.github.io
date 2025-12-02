@@ -14,7 +14,7 @@
             <div class="site-branding">
                 <div class="header-avatar">
                     {{ if (fileExists "static/images/avatar.jpg") }}
-                    <img src="/images/avatar.jpg" alt="{{ .Site.Params.author }}" />
+                    <img src="{{ "images/avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" />
                     {{ else }}
                     <div class="avatar-placeholder">{{ substr .Site.Params.author 0 1 }}</div>
                     {{ end }}
@@ -28,7 +28,7 @@
             <nav class="site-nav">
                 <ul>
                     {{ range .Site.Menus.main }}
-                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
                     {{ end }}
                 </ul>
             </nav>
