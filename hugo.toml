@@ -1,5 +1,9 @@
-
 languageCode = 'zh-cn'
 title = '季夏的个人博客'
 theme = 'ananke'
 baseURL = 'https://jixia8.github.io/'
+
+[params]
+  author = "季夏"
+  subtitle = "记录学习与生活的点滴"
+  description = "个人博客"

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>{{ .Site.Title }}</h1>
+      <p class="subtitle">{{ with .Site.Params.subtitle }}{{ . }}{{ end }}</p>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <section class="posts">
+      <h2>最新文章</h2>
+      <div class="cards">
+        {{ $pages := where .Site.RegularPages "Section" "posts" }}
+        {{ range first 12 ($pages.ByDate.Reverse) }}
+        <article class="card">
+          <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <p class="meta">{{ .Date.Format "2006-01-02" }} · {{ .ReadingTime }} 分钟</p>
+          <p class="excerpt">{{ .Summary }}</p>
+        </article>
+        {{ end }}
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="about">
+        <h3>关于</h3>
+        <p>{{ with .Site.Params.author }}{{ . }}{{ end }}</p>
+      </div>
+
+      <div class="tags">
+        <h3>标签</h3>
+        <ul>
+          {{ range $name, $tax := .Site.Taxonomies.tags }}
+            <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }} ({{ len $tax }})</a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© {{ now.Format "2006" }} {{ .Site.Title }}</div>
+  </footer>
+</body>
+</html>
