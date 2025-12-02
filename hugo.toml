@@ -1,5 +1,5 @@
-baseURL = 'https://example.org/'
+
 languageCode = 'zh-cn'
 title = '季夏的个人博客'
 theme = 'ananke'
-baseURL = 'https://<你的GitHub用户名>.github.io/'
+baseURL = 'https://jixia8.github.io/'
