@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="main-grid">
+    <section class="post-list">
+        <div class="hero" style="text-align: left; padding: 0 0 20px; grid-column: auto;">
+            <h1>{{ .Title }}</h1>
+        </div>
+        {{ range .Paginator.Pages }}
+        <article class="post-card">
+            <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <div class="post-meta">
+                <time>{{ .Date.Format "2006-01-02" }}</time> · {{ .ReadingTime }} 分钟阅读
+            </div>
+            <p class="post-summary">{{ .Summary }}</p>
+        </article>
+        {{ end }}
+        
+        {{ template "_internal/pagination.html" . }}
+    </section>
+
+    {{ partial "sidebar.html" . }}
+</div>
+{{ end }}

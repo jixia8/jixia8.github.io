@@ -1,0 +1,40 @@
+<aside class="author-aside">
+    <div class="widget widget-author-info">
+        <h3 class="widget-title">作者</h3>
+        <div class="author-box">
+            <div class="author-avatar">
+                {{ if (fileExists "static/images/avatar.jpg") }}
+                <img src="/images/avatar.jpg" alt="{{ .Site.Params.author }}" />
+                {{ else }}
+                <div class="avatar-placeholder">{{ substr .Site.Params.author 0 1 }}</div>
+                {{ end }}
+            </div>
+            <h4 class="author-name">{{ .Site.Params.author }}</h4>
+            <p class="author-bio">{{ .Site.Params.description }}</p>
+        </div>
+    </div>
+
+    {{ if .Params.notes }}
+    <div class="widget widget-quote">
+        <h3 class="widget-title">小记</h3>
+        <div class="widget-body">
+            {{ range .Params.notes }}
+            <blockquote class="daily-quote">
+                <p>{{ . }}</p>
+            </blockquote>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="widget widget-stats">
+        <h3 class="widget-title">统计</h3>
+        <div class="widget-body">
+            <ul>
+                <li>📝 文章总数: {{ len (where .Site.RegularPages "Type" "posts") }}</li>
+                <li>📁 分类数: {{ len .Site.Taxonomies.categories }}</li>
+                <li>🏷️ 标签数: {{ len .Site.Taxonomies.tags }}</li>
+            </ul>
+        </div>
+    </div>
+</aside>

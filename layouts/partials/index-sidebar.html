@@ -1,0 +1,12 @@
+<aside class="index-sidebar">
+    <div class="widget widget-recent-posts">
+        <h3 class="widget-title">全部文章</h3>
+        <div class="widget-body">
+            <ul>
+                {{ range (where .Site.RegularPages "Type" "posts") }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</aside>

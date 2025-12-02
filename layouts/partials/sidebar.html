@@ -1,0 +1,43 @@
+<aside class="sidebar">
+    <div class="widget widget-author">
+        <h3 class="widget-title">关于我</h3>
+        <div class="widget-body">
+            <p>{{ .Site.Params.description | default "这是我的个人博客" }}</p>
+        </div>
+    </div>
+
+    {{ if .Site.Taxonomies.categories }}
+    <div class="widget widget-categories">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget-body">
+            <ul>
+                {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+                <li><a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a> ({{ $taxonomy.Count }})</li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+    {{ end }}
+
+    {{ if .Site.Taxonomies.tags }}
+    <div class="widget widget-tags">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget-body tags-cloud">
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="widget widget-recent">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget-body">
+            <ul>
+                {{ range first 5 (where .Site.RegularPages "Type" "posts") }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</aside>

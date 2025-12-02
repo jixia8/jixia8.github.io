@@ -1,0 +1,73 @@
+{{ define "main" }}
+<div class="article-layout">
+    {{ partial "author-sidebar.html" . }}
+    
+    <article class="post-article">
+        <header class="article-header">
+            <h1 class="article-title">{{ .Title }}</h1>
+            <div class="post-meta">
+                <time>{{ .Date.Format "2006-01-02" }}</time> · {{ .ReadingTime }} 分钟阅读
+                {{ with .Params.categories }}
+                · 分类: {{ range . }}<a href="{{ "categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}
+                {{ end }}
+                {{ with .Params.tags }}
+                · 标签: {{ range . }}<a href="{{ "tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}
+                {{ end }}
+            </div>
+        </header>
+        
+        {{ if .TableOfContents }}
+        <div class="toc">
+            <details open>
+                <summary>目录</summary>
+                <nav class="toc-nav">
+                    {{ .TableOfContents }}
+                </nav>
+            </details>
+        </div>
+        {{ end }}
+
+        <div class="article-content">
+            {{ .Content }}
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const article = document.querySelector('.post-article');
+            const tocLinks = document.querySelectorAll('.toc-nav a');
+            
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement && article) {
+                        const articleRect = article.getBoundingClientRect();
+                        const targetRect = targetElement.getBoundingClientRect();
+                        const scrollTop = article.scrollTop;
+                        const offset = targetRect.top - articleRect.top + scrollTop - 20;
+                        
+                        article.scrollTo({
+                            top: offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        </script>
+
+        <div class="post-nav" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between;">
+            {{ with .PrevInSection }}
+            <a href="{{ .RelPermalink }}">← {{ .Title }}</a>
+            {{ end }}
+            {{ with .NextInSection }}
+            <a href="{{ .RelPermalink }}">{{ .Title }} →</a>
+            {{ end }}
+        </div>
+    </article>
+
+    {{ partial "sidebar.html" . }}
+</div>
+{{ end }}

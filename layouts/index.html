@@ -1,54 +1,35 @@
-<!doctype html>
-<html lang="zh-cn">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{ .Site.Title }}</title>
-  <meta name="description" content="{{ .Site.Params.description }}">
-  <link rel="stylesheet" href="/css/site.css">
-</head>
-<body>
-  <header class="hero">
-    <div class="container">
-      <h1>{{ .Site.Title }}</h1>
-      <p class="subtitle">{{ with .Site.Params.subtitle }}{{ . }}{{ end }}</p>
-    </div>
-  </header>
+{{ define "main" }}
+<section class="hero">
+    <h1>{{ .Site.Title }}</h1>
+    <p class="subtitle">{{ .Site.Params.subtitle }}</p>
+</section>
 
-  <main class="container main-grid">
-    <section class="posts">
-      <h2>最新文章</h2>
-      <div class="cards">
-        {{ $pages := where .Site.RegularPages "Section" "posts" }}
-        {{ range first 12 ($pages.ByDate.Reverse) }}
-        <article class="card">
-          <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <p class="meta">{{ .Date.Format "2006-01-02" }} · {{ .ReadingTime }} 分钟</p>
-          <p class="excerpt">{{ .Summary }}</p>
+<div class="index-layout">
+    {{ partial "index-sidebar.html" . }}
+    
+    <section class="post-list">
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+        {{ range $paginator.Pages }}
+        <article class="post-card" onclick="window.location.href='{{ .RelPermalink }}'">
+            <h2 class="post-title"><a href="{{ .RelPermalink }}" onclick="event.stopPropagation()">{{ .Title }}</a></h2>
+            <div class="post-meta">
+                <time>{{ .Date.Format "2006-01-02" }}</time>
+                <span>·</span>
+                <span>{{ .ReadingTime }} 分钟</span>
+                {{ if .Params.categories }}
+                <span>·</span>
+                {{ range $index, $cat := (first 1 .Params.categories) }}
+                <a href="{{ "/categories/" | relLangURL }}{{ $cat | urlize }}" onclick="event.stopPropagation()">{{ $cat }}</a>
+                {{ end }}
+                {{ end }}
+            </div>
+            <p class="post-summary">{{ .Summary }}</p>
         </article>
         {{ end }}
-      </div>
+        
+        {{ template "_internal/pagination.html" . }}
     </section>
 
-    <aside class="sidebar">
-      <div class="about">
-        <h3>关于</h3>
-        <p>{{ with .Site.Params.author }}{{ . }}{{ end }}</p>
-      </div>
-
-      <div class="tags">
-        <h3>标签</h3>
-        <ul>
-          {{ range $name, $tax := .Site.Taxonomies.tags }}
-            <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }} ({{ len $tax }})</a></li>
-          {{ end }}
-        </ul>
-      </div>
-    </aside>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">© {{ now.Format "2006" }} {{ .Site.Title }}</div>
-  </footer>
-</body>
-</html>
+    {{ partial "sidebar.html" . }}
+</div>
+{{ end }}

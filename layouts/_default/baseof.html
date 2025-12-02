@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{{ or .Site.Language.LanguageCode .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary }}{{ end }}">
+    <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="site-branding">
+                <div class="header-avatar">
+                    {{ if (fileExists "static/images/avatar.jpg") }}
+                    <img src="/images/avatar.jpg" alt="{{ .Site.Params.author }}" />
+                    {{ else }}
+                    <div class="avatar-placeholder">{{ substr .Site.Params.author 0 1 }}</div>
+                    {{ end }}
+                </div>
+                <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
+            </div>
+            <div class="header-search">
+                <input type="text" id="search-input" placeholder="搜索文章..." />
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <nav class="site-nav">
+                <ul>
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ now.Year }} {{ .Site.Params.author }}. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    
+    if (searchInput) {
+        const posts = [
+            {{ range (where .Site.RegularPages "Type" "posts") }}
+            {
+                title: {{ .Title | jsonify }},
+                url: {{ .RelPermalink | jsonify }},
+                date: {{ .Date.Format "2006-01-02" | jsonify }},
+                summary: {{ .Summary | plainify | truncate 100 | jsonify }}
+            },
+            {{ end }}
+        ];
+
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            
+            if (query.length < 2) {
+                searchResults.classList.remove('active');
+                return;
+            }
+
+            const results = posts.filter(post => 
+                post.title.toLowerCase().includes(query) || 
+                post.summary.toLowerCase().includes(query)
+            ).slice(0, 8);
+
+            if (results.length > 0) {
+                searchResults.innerHTML = results.map(post => `
+                    <div class="search-result-item" onclick="window.location.href='${post.url}'">
+                        <div class="search-result-title">${post.title}</div>
+                        <div class="search-result-meta">${post.date}</div>
+                    </div>
+                `).join('');
+                searchResults.classList.add('active');
+            } else {
+                searchResults.innerHTML = '<div class="search-result-item">未找到相关文章</div>';
+                searchResults.classList.add('active');
+            }
+        });
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.remove('active');
+            }
+        });
+    }
+    </script>
+
+</body>
+</html>

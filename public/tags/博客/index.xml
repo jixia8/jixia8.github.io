@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客 on 季夏的个人博客</title>
+    <link>http://localhost:1313/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in 博客 on 季夏的个人博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Dec 2025 11:30:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo博客搭建指南</title>
+      <link>http://localhost:1313/posts/hugo-guide/</link>
+      <pubDate>Tue, 02 Dec 2025 11:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/hugo-guide/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。&lt;/p&gt;&#xA;&lt;h2 id=&#34;什么是-hugo&#34;&gt;什么是 Hugo&lt;/h2&gt;&#xA;&lt;p&gt;Hugo 是一个用 Go 语言编写的静态网站生成器，具有以下优点：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;极快的构建速度&lt;/strong&gt;：毫秒级生成网站&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;简单易用&lt;/strong&gt;：使用 Markdown 写作&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;主题丰富&lt;/strong&gt;：有大量免费主题可选&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;部署方便&lt;/strong&gt;：生成的是纯静态文件&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;搭建步骤&#34;&gt;搭建步骤&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-安装-hugo&#34;&gt;1. 安装 Hugo&lt;/h3&gt;&#xA;&lt;p&gt;在 Windows 上可以使用 Chocolatey：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;choco install hugo-extended -y&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;验证安装：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>欢迎来到我的博客</title>
+      <link>http://localhost:1313/posts/welcome/</link>
+      <pubDate>Tue, 02 Dec 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/welcome/</guid>
+      <description>&lt;h2 id=&#34;关于这个博客&#34;&gt;关于这个博客&lt;/h2&gt;&#xA;&lt;p&gt;这是我的个人博客，用来记录学习和生活中的点滴。&lt;/p&gt;&#xA;&lt;h2 id=&#34;我会写什么&#34;&gt;我会写什么&lt;/h2&gt;&#xA;&lt;p&gt;在这个博客里，我会分享：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;技术学习笔记&lt;/li&gt;&#xA;&lt;li&gt;项目开发经验&lt;/li&gt;&#xA;&lt;li&gt;生活感悟与思考&lt;/li&gt;&#xA;&lt;li&gt;读书笔记&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;为什么要写博客&#34;&gt;为什么要写博客&lt;/h2&gt;&#xA;&lt;p&gt;写博客是一个很好的习惯：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;整理思路&lt;/strong&gt;：通过写作梳理自己的想法&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;知识沉淀&lt;/strong&gt;：记录下来的知识更容易被回顾&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;分享交流&lt;/strong&gt;：与他人交流学习心得&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;记录成长&lt;/strong&gt;：见证自己的进步&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;关于我&#34;&gt;关于我&lt;/h2&gt;&#xA;&lt;p&gt;我是季夏，一个热爱学习和分享的人。欢迎通过评论或邮件与我交流！&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
