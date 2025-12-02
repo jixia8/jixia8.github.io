@@ -1,1767 +1,310 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>并发编程 | 季夏的个人博客</title>
-    <meta name="description" content="">
-    <link rel="stylesheet" href="/css/site.css">
-</head>
-<body>
-
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="site-branding">
-                <div class="header-avatar">
-                    
-                    <img src="/images/avatar.jpg" alt="季夏" />
-                    
-                </div>
-                <a href="/" class="site-title">季夏的个人博客</a>
-            </div>
-            <div class="header-search">
-                <input type="text" id="search-input" placeholder="搜索文章..." />
-                <div id="search-results" class="search-results"></div>
-            </div>
-            <nav class="site-nav">
-                <ul>
-                    
-                    <li><a href="/">首页</a></li>
-                    
-                    <li><a href="/posts/">归档</a></li>
-                    
-                    <li><a href="/tags/">标签</a></li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="site-main">
-        <div class="container">
-            
-<div class="tags-page">
-    <div class="page-header">
-        <h1 class="page-title">🏷️ 标签云</h1>
-        <p class="page-subtitle">共 42 个标签，1 篇文章</p>
-    </div>
-
-    <div class="tags-cloud">
-        
-        
-        
-        
-        <a href="/tags/angular" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">angular</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/ci/cd" 
-           class="tag-item" 
-           title="2 篇文章">
-            <span class="tag-name">ci/cd</span>
-            <span class="tag-count">2</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/devops" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">devops</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/docker" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">docker</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/github-pages" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">github pages</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/go" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">go</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/hugo" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">hugo</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/javascript" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">javascript</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/kubernetes" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">kubernetes</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/markdown" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">markdown</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/numpy" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">numpy</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/pandas" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">pandas</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/python" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">python</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/react" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">react</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/typescript" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">typescript</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/vue" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">vue</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">个人成长</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F" 
-           class="tag-item" 
-           title="2 篇文章">
-            <span class="tag-name">云原生</span>
-            <span class="tag-count">2</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E5%85%A5%E9%97%A8" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">入门</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E5%86%99%E4%BD%9C" 
-           class="tag-item" 
-           title="2 篇文章">
-            <span class="tag-name">写作</span>
-            <span class="tag-count">2</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">前端框架</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E5%8D%9A%E5%AE%A2" 
-           class="tag-item" 
-           title="2 篇文章">
-            <span class="tag-name">博客</span>
-            <span class="tag-count">2</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E5%AE%B9%E5%99%A8" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">容器</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">并发编程</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E5%BC%80%E5%A7%8B" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">开始</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1" 
-           class="tag-item" 
-           title="2 篇文章">
-            <span class="tag-name">微服务</span>
-            <span class="tag-count">2</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">数据可视化</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">数据处理</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E6%96%87%E6%A1%A3" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">文档</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">机器学习</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">格式化</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">深度学习</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">状态管理</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E7%94%9F%E4%BA%A7%E5%8A%9B" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">生产力</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E7%AC%94%E8%AE%B0" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">笔记</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E7%BB%84%E4%BB%B6%E5%8C%96" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">组件化</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">统计分析</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">编辑器</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">自动化</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">自动化部署</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E9%83%A8%E7%BD%B2" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">部署</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-        
-        
-        
-        <a href="/tags/%E9%95%9C%E5%83%8F" 
-           class="tag-item" 
-           title="1 篇文章">
-            <span class="tag-name">镜像</span>
-            <span class="tag-count">1</span>
-        </a>
-        
-    </div>
-
-    <div class="tags-list">
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>angular</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/frontend-frameworks/" class="tag-article-link">
-                        <h3 class="tag-article-title">前端开发框架对比</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>ci/cd</span>
-                <span class="tag-group-count">2 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/hugo-guide/" class="tag-article-link">
-                        <h3 class="tag-article-title">Hugo博客搭建指南</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
-什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p>
-                    </a>
-                </article>
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/docker-deployment/" class="tag-article-link">
-                        <h3 class="tag-article-title">Docker容器化部署实践</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Docker 简介 Docker 是容器化技术的代表。
-基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>devops</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/go-first-impression/" class="tag-article-link">
-                        <h3 class="tag-article-title">Go语言初体验</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
+<!doctype html><html lang=zh-cn><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>并发编程 | 季夏的个人博客</title><meta name=description content><link rel=stylesheet href=/css/site.css></head><body><header class=site-header><div class="container header-inner"><div class=site-branding><div class=header-avatar><img src=/images/avatar.jpg alt=季夏></div><a href=/ class=site-title>季夏的个人博客</a></div><div class=header-search><input type=text id=search-input placeholder=搜索文章...><div id=search-results class=search-results></div></div><nav class=site-nav><ul><li><a href=/>首页</a></li><li><a href=/posts/>归档</a></li><li><a href=/tags/>标签</a></li></ul></nav></div></header><main class=site-main><div class=container><div class=tags-page><div class=page-header><h1 class=page-title>🏷️ 标签云</h1><p class=page-subtitle>共 48 个标签，1 篇文章</p></div><div class=tags-cloud><a href=/tags/angular class=tag-item title="1 篇文章"><span class=tag-name>angular</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/ci/cd class=tag-item title="2 篇文章"><span class=tag-name>ci/cd</span>
+<span class=tag-count>2</span>
+</a><a href=/tags/devops class=tag-item title="1 篇文章"><span class=tag-name>devops</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/docker class=tag-item title="1 篇文章"><span class=tag-name>docker</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/gc class=tag-item title="1 篇文章"><span class=tag-name>gc</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/github-pages class=tag-item title="1 篇文章"><span class=tag-name>github pages</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/go class=tag-item title="1 篇文章"><span class=tag-name>go</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/hugo class=tag-item title="1 篇文章"><span class=tag-name>hugo</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/java class=tag-item title="1 篇文章"><span class=tag-name>java</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/javascript class=tag-item title="1 篇文章"><span class=tag-name>javascript</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/jvm class=tag-item title="1 篇文章"><span class=tag-name>jvm</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/kubernetes class=tag-item title="1 篇文章"><span class=tag-name>kubernetes</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/markdown class=tag-item title="1 篇文章"><span class=tag-name>markdown</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/numpy class=tag-item title="1 篇文章"><span class=tag-name>numpy</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/pandas class=tag-item title="1 篇文章"><span class=tag-name>pandas</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/python class=tag-item title="1 篇文章"><span class=tag-name>python</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/react class=tag-item title="1 篇文章"><span class=tag-name>react</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/typescript class=tag-item title="1 篇文章"><span class=tag-name>typescript</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/vue class=tag-item title="1 篇文章"><span class=tag-name>vue</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF class=tag-item title="1 篇文章"><span class=tag-name>个人成长</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E4%BA%91%E5%8E%9F%E7%94%9F class=tag-item title="2 篇文章"><span class=tag-name>云原生</span>
+<span class=tag-count>2</span>
+</a><a href=/tags/%E5%85%A5%E9%97%A8 class=tag-item title="1 篇文章"><span class=tag-name>入门</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86 class=tag-item title="1 篇文章"><span class=tag-name>内存管理</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E5%86%99%E4%BD%9C class=tag-item title="2 篇文章"><span class=tag-name>写作</span>
+<span class=tag-count>2</span>
+</a><a href=/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6 class=tag-item title="1 篇文章"><span class=tag-name>前端框架</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E5%8D%9A%E5%AE%A2 class=tag-item title="2 篇文章"><span class=tag-name>博客</span>
+<span class=tag-count>2</span>
+</a><a href=/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6 class=tag-item title="1 篇文章"><span class=tag-name>垃圾回收</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E5%AE%B9%E5%99%A8 class=tag-item title="1 篇文章"><span class=tag-name>容器</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B class=tag-item title="1 篇文章"><span class=tag-name>并发编程</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E5%BC%80%E5%A7%8B class=tag-item title="1 篇文章"><span class=tag-name>开始</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1 class=tag-item title="2 篇文章"><span class=tag-name>微服务</span>
+<span class=tag-count>2</span>
+</a><a href=/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96 class=tag-item title="1 篇文章"><span class=tag-name>性能优化</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96 class=tag-item title="1 篇文章"><span class=tag-name>数据可视化</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86 class=tag-item title="1 篇文章"><span class=tag-name>数据处理</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E6%96%87%E6%A1%A3 class=tag-item title="1 篇文章"><span class=tag-name>文档</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0 class=tag-item title="1 篇文章"><span class=tag-name>机器学习</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96 class=tag-item title="1 篇文章"><span class=tag-name>格式化</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0 class=tag-item title="1 篇文章"><span class=tag-name>深度学习</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86 class=tag-item title="1 篇文章"><span class=tag-name>状态管理</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E7%94%9F%E4%BA%A7%E5%8A%9B class=tag-item title="1 篇文章"><span class=tag-name>生产力</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E7%AC%94%E8%AE%B0 class=tag-item title="1 篇文章"><span class=tag-name>笔记</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E7%BB%84%E4%BB%B6%E5%8C%96 class=tag-item title="1 篇文章"><span class=tag-name>组件化</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90 class=tag-item title="1 篇文章"><span class=tag-name>统计分析</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E7%BC%96%E8%BE%91%E5%99%A8 class=tag-item title="1 篇文章"><span class=tag-name>编辑器</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E8%87%AA%E5%8A%A8%E5%8C%96 class=tag-item title="1 篇文章"><span class=tag-name>自动化</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2 class=tag-item title="1 篇文章"><span class=tag-name>自动化部署</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E9%83%A8%E7%BD%B2 class=tag-item title="1 篇文章"><span class=tag-name>部署</span>
+<span class=tag-count>1</span>
+</a><a href=/tags/%E9%95%9C%E5%83%8F class=tag-item title="1 篇文章"><span class=tag-name>镜像</span>
+<span class=tag-count>1</span></a></div><div class=tags-list><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>angular</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/frontend-frameworks/ class=tag-article-link><h3 class=tag-article-title>前端开发框架对比</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>ci/cd</span>
+<span class=tag-group-count>2 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/hugo-guide/ class=tag-article-link><h3 class=tag-article-title>Hugo博客搭建指南</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
+什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p></a></article><article class=tag-article><a href=https://jixia8.github.io/posts/docker-deployment/ class=tag-article-link><h3 class=tag-article-title>Docker容器化部署实践</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>Docker 简介 Docker 是容器化技术的代表。
+基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>devops</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/go-first-impression/ class=tag-article-link><h3 class=tag-article-title>Go语言初体验</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
 简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：
-package main …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>docker</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/docker-deployment/" class="tag-article-link">
-                        <h3 class="tag-article-title">Docker容器化部署实践</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Docker 简介 Docker 是容器化技术的代表。
-基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>github pages</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/hugo-guide/" class="tag-article-link">
-                        <h3 class="tag-article-title">Hugo博客搭建指南</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
-什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>go</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/go-first-impression/" class="tag-article-link">
-                        <h3 class="tag-article-title">Go语言初体验</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
+package main …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>docker</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/docker-deployment/ class=tag-article-link><h3 class=tag-article-title>Docker容器化部署实践</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>Docker 简介 Docker 是容器化技术的代表。
+基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>gc</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/java-gc-generation/ class=tag-article-link><h3 class=tag-article-title>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想 摘要：你是否想过，Java 虚拟机（JVM）管理内存的方式，像极了一场精心设计的皇家选妃？本文不谈枯燥的算 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>github pages</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/hugo-guide/ class=tag-article-link><h3 class=tag-article-title>Hugo博客搭建指南</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
+什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>go</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/go-first-impression/ class=tag-article-link><h3 class=tag-article-title>Go语言初体验</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
 简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：
-package main …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>hugo</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/hugo-guide/" class="tag-article-link">
-                        <h3 class="tag-article-title">Hugo博客搭建指南</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
-什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>javascript</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/frontend-frameworks/" class="tag-article-link">
-                        <h3 class="tag-article-title">前端开发框架对比</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>kubernetes</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/docker-deployment/" class="tag-article-link">
-                        <h3 class="tag-article-title">Docker容器化部署实践</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Docker 简介 Docker 是容器化技术的代表。
-基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>markdown</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/markdown-tips/" class="tag-article-link">
-                        <h3 class="tag-article-title">Markdown写作技巧</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">工具</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
+package main …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>hugo</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/hugo-guide/ class=tag-article-link><h3 class=tag-article-title>Hugo博客搭建指南</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
+什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>java</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/java-gc-generation/ class=tag-article-link><h3 class=tag-article-title>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想 摘要：你是否想过，Java 虚拟机（JVM）管理内存的方式，像极了一场精心设计的皇家选妃？本文不谈枯燥的算 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>javascript</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/frontend-frameworks/ class=tag-article-link><h3 class=tag-article-title>前端开发框架对比</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>jvm</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/java-gc-generation/ class=tag-article-link><h3 class=tag-article-title>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想 摘要：你是否想过，Java 虚拟机（JVM）管理内存的方式，像极了一场精心设计的皇家选妃？本文不谈枯燥的算 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>kubernetes</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/docker-deployment/ class=tag-article-link><h3 class=tag-article-title>Docker容器化部署实践</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>Docker 简介 Docker 是容器化技术的代表。
+基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>markdown</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/markdown-tips/ class=tag-article-link><h3 class=tag-article-title>Markdown写作技巧</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>工具</span></div><p class=tag-article-summary>Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
 基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。
-强调 粗体：使用 **文字** 斜体：使用 * …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>numpy</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/python-data-analysis/" class="tag-article-link">
-                        <h3 class="tag-article-title">Python数据分析实战</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">数据分析简介 Python 是数据分析的首选语言。
-常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>pandas</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/python-data-analysis/" class="tag-article-link">
-                        <h3 class="tag-article-title">Python数据分析实战</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">数据分析简介 Python 是数据分析的首选语言。
-常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>python</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/python-data-analysis/" class="tag-article-link">
-                        <h3 class="tag-article-title">Python数据分析实战</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">数据分析简介 Python 是数据分析的首选语言。
-常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>react</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/frontend-frameworks/" class="tag-article-link">
-                        <h3 class="tag-article-title">前端开发框架对比</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>typescript</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/frontend-frameworks/" class="tag-article-link">
-                        <h3 class="tag-article-title">前端开发框架对比</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>vue</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/frontend-frameworks/" class="tag-article-link">
-                        <h3 class="tag-article-title">前端开发框架对比</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>个人成长</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/welcome/" class="tag-article-link">
-                        <h3 class="tag-article-title">欢迎来到我的博客</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">随笔</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。
+强调 粗体：使用 **文字** 斜体：使用 * …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>numpy</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/python-data-analysis/ class=tag-article-link><h3 class=tag-article-title>Python数据分析实战</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>数据分析简介 Python 是数据分析的首选语言。
+常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>pandas</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/python-data-analysis/ class=tag-article-link><h3 class=tag-article-title>Python数据分析实战</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>数据分析简介 Python 是数据分析的首选语言。
+常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>python</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/python-data-analysis/ class=tag-article-link><h3 class=tag-article-title>Python数据分析实战</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>数据分析简介 Python 是数据分析的首选语言。
+常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>react</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/frontend-frameworks/ class=tag-article-link><h3 class=tag-article-title>前端开发框架对比</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>typescript</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/frontend-frameworks/ class=tag-article-link><h3 class=tag-article-title>前端开发框架对比</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>vue</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/frontend-frameworks/ class=tag-article-link><h3 class=tag-article-title>前端开发框架对比</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>个人成长</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/welcome/ class=tag-article-link><h3 class=tag-article-title>欢迎来到我的博客</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>随笔</span></div><p class=tag-article-summary>关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。
 我会写什么 在这个博客里，我会分享：
 技术学习笔记 项目开发经验 生活感悟与思考 读书笔记 为什么要写博客 写博客是一个很好的习惯：
-整理 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>云原生</span>
-                <span class="tag-group-count">2 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/go-first-impression/" class="tag-article-link">
-                        <h3 class="tag-article-title">Go语言初体验</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
+整理 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>云原生</span>
+<span class=tag-group-count>2 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/go-first-impression/ class=tag-article-link><h3 class=tag-article-title>Go语言初体验</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
 简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：
-package main …</p>
-                    </a>
-                </article>
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/docker-deployment/" class="tag-article-link">
-                        <h3 class="tag-article-title">Docker容器化部署实践</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Docker 简介 Docker 是容器化技术的代表。
-基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>入门</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/go-first-impression/" class="tag-article-link">
-                        <h3 class="tag-article-title">Go语言初体验</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
+package main …</p></a></article><article class=tag-article><a href=https://jixia8.github.io/posts/docker-deployment/ class=tag-article-link><h3 class=tag-article-title>Docker容器化部署实践</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>Docker 简介 Docker 是容器化技术的代表。
+基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>入门</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/go-first-impression/ class=tag-article-link><h3 class=tag-article-title>Go语言初体验</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
 简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：
-package main …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>写作</span>
-                <span class="tag-group-count">2 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/welcome/" class="tag-article-link">
-                        <h3 class="tag-article-title">欢迎来到我的博客</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">随笔</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。
+package main …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>内存管理</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/java-gc-generation/ class=tag-article-link><h3 class=tag-article-title>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想 摘要：你是否想过，Java 虚拟机（JVM）管理内存的方式，像极了一场精心设计的皇家选妃？本文不谈枯燥的算 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>写作</span>
+<span class=tag-group-count>2 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/welcome/ class=tag-article-link><h3 class=tag-article-title>欢迎来到我的博客</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>随笔</span></div><p class=tag-article-summary>关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。
 我会写什么 在这个博客里，我会分享：
 技术学习笔记 项目开发经验 生活感悟与思考 读书笔记 为什么要写博客 写博客是一个很好的习惯：
-整理 …</p>
-                    </a>
-                </article>
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/markdown-tips/" class="tag-article-link">
-                        <h3 class="tag-article-title">Markdown写作技巧</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">工具</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
+整理 …</p></a></article><article class=tag-article><a href=https://jixia8.github.io/posts/markdown-tips/ class=tag-article-link><h3 class=tag-article-title>Markdown写作技巧</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>工具</span></div><p class=tag-article-summary>Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
 基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。
-强调 粗体：使用 **文字** 斜体：使用 * …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>前端框架</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/frontend-frameworks/" class="tag-article-link">
-                        <h3 class="tag-article-title">前端开发框架对比</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>博客</span>
-                <span class="tag-group-count">2 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/hugo-guide/" class="tag-article-link">
-                        <h3 class="tag-article-title">Hugo博客搭建指南</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
-什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p>
-                    </a>
-                </article>
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/welcome/" class="tag-article-link">
-                        <h3 class="tag-article-title">欢迎来到我的博客</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">随笔</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。
+强调 粗体：使用 **文字** 斜体：使用 * …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>前端框架</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/frontend-frameworks/ class=tag-article-link><h3 class=tag-article-title>前端开发框架对比</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>博客</span>
+<span class=tag-group-count>2 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/hugo-guide/ class=tag-article-link><h3 class=tag-article-title>Hugo博客搭建指南</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
+什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p></a></article><article class=tag-article><a href=https://jixia8.github.io/posts/welcome/ class=tag-article-link><h3 class=tag-article-title>欢迎来到我的博客</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>随笔</span></div><p class=tag-article-summary>关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。
 我会写什么 在这个博客里，我会分享：
 技术学习笔记 项目开发经验 生活感悟与思考 读书笔记 为什么要写博客 写博客是一个很好的习惯：
-整理 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>容器</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/docker-deployment/" class="tag-article-link">
-                        <h3 class="tag-article-title">Docker容器化部署实践</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Docker 简介 Docker 是容器化技术的代表。
-基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>并发编程</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/go-first-impression/" class="tag-article-link">
-                        <h3 class="tag-article-title">Go语言初体验</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
+整理 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>垃圾回收</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/java-gc-generation/ class=tag-article-link><h3 class=tag-article-title>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想 摘要：你是否想过，Java 虚拟机（JVM）管理内存的方式，像极了一场精心设计的皇家选妃？本文不谈枯燥的算 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>容器</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/docker-deployment/ class=tag-article-link><h3 class=tag-article-title>Docker容器化部署实践</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>Docker 简介 Docker 是容器化技术的代表。
+基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>并发编程</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/go-first-impression/ class=tag-article-link><h3 class=tag-article-title>Go语言初体验</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
 简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：
-package main …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>开始</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/welcome/" class="tag-article-link">
-                        <h3 class="tag-article-title">欢迎来到我的博客</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">随笔</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。
+package main …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>开始</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/welcome/ class=tag-article-link><h3 class=tag-article-title>欢迎来到我的博客</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>随笔</span></div><p class=tag-article-summary>关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。
 我会写什么 在这个博客里，我会分享：
 技术学习笔记 项目开发经验 生活感悟与思考 读书笔记 为什么要写博客 写博客是一个很好的习惯：
-整理 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>微服务</span>
-                <span class="tag-group-count">2 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/go-first-impression/" class="tag-article-link">
-                        <h3 class="tag-article-title">Go语言初体验</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
+整理 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>微服务</span>
+<span class=tag-group-count>2 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/go-first-impression/ class=tag-article-link><h3 class=tag-article-title>Go语言初体验</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。
 简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：
-package main …</p>
-                    </a>
-                </article>
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/docker-deployment/" class="tag-article-link">
-                        <h3 class="tag-article-title">Docker容器化部署实践</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Docker 简介 Docker 是容器化技术的代表。
-基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>数据可视化</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/python-data-analysis/" class="tag-article-link">
-                        <h3 class="tag-article-title">Python数据分析实战</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">数据分析简介 Python 是数据分析的首选语言。
-常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>数据处理</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/python-data-analysis/" class="tag-article-link">
-                        <h3 class="tag-article-title">Python数据分析实战</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">数据分析简介 Python 是数据分析的首选语言。
-常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>文档</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/markdown-tips/" class="tag-article-link">
-                        <h3 class="tag-article-title">Markdown写作技巧</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">工具</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
+package main …</p></a></article><article class=tag-article><a href=https://jixia8.github.io/posts/docker-deployment/ class=tag-article-link><h3 class=tag-article-title>Docker容器化部署实践</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>Docker 简介 Docker 是容器化技术的代表。
+基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>性能优化</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/java-gc-generation/ class=tag-article-link><h3 class=tag-article-title>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想 摘要：你是否想过，Java 虚拟机（JVM）管理内存的方式，像极了一场精心设计的皇家选妃？本文不谈枯燥的算 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>数据可视化</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/python-data-analysis/ class=tag-article-link><h3 class=tag-article-title>Python数据分析实战</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>数据分析简介 Python 是数据分析的首选语言。
+常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>数据处理</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/python-data-analysis/ class=tag-article-link><h3 class=tag-article-title>Python数据分析实战</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>数据分析简介 Python 是数据分析的首选语言。
+常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>文档</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/markdown-tips/ class=tag-article-link><h3 class=tag-article-title>Markdown写作技巧</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>工具</span></div><p class=tag-article-summary>Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
 基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。
-强调 粗体：使用 **文字** 斜体：使用 * …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>机器学习</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/python-data-analysis/" class="tag-article-link">
-                        <h3 class="tag-article-title">Python数据分析实战</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">数据分析简介 Python 是数据分析的首选语言。
-常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>格式化</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/markdown-tips/" class="tag-article-link">
-                        <h3 class="tag-article-title">Markdown写作技巧</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">工具</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
+强调 粗体：使用 **文字** 斜体：使用 * …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>机器学习</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/python-data-analysis/ class=tag-article-link><h3 class=tag-article-title>Python数据分析实战</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>数据分析简介 Python 是数据分析的首选语言。
+常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>格式化</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/markdown-tips/ class=tag-article-link><h3 class=tag-article-title>Markdown写作技巧</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>工具</span></div><p class=tag-article-summary>Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
 基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。
-强调 粗体：使用 **文字** 斜体：使用 * …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>深度学习</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/python-data-analysis/" class="tag-article-link">
-                        <h3 class="tag-article-title">Python数据分析实战</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">数据分析简介 Python 是数据分析的首选语言。
-常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>状态管理</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/frontend-frameworks/" class="tag-article-link">
-                        <h3 class="tag-article-title">前端开发框架对比</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>生产力</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/markdown-tips/" class="tag-article-link">
-                        <h3 class="tag-article-title">Markdown写作技巧</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">工具</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
+强调 粗体：使用 **文字** 斜体：使用 * …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>深度学习</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/python-data-analysis/ class=tag-article-link><h3 class=tag-article-title>Python数据分析实战</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>数据分析简介 Python 是数据分析的首选语言。
+常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>状态管理</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/frontend-frameworks/ class=tag-article-link><h3 class=tag-article-title>前端开发框架对比</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>生产力</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/markdown-tips/ class=tag-article-link><h3 class=tag-article-title>Markdown写作技巧</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>工具</span></div><p class=tag-article-summary>Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
 基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。
-强调 粗体：使用 **文字** 斜体：使用 * …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>笔记</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/markdown-tips/" class="tag-article-link">
-                        <h3 class="tag-article-title">Markdown写作技巧</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">工具</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
+强调 粗体：使用 **文字** 斜体：使用 * …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>笔记</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/markdown-tips/ class=tag-article-link><h3 class=tag-article-title>Markdown写作技巧</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>工具</span></div><p class=tag-article-summary>Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
 基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。
-强调 粗体：使用 **文字** 斜体：使用 * …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>组件化</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/frontend-frameworks/" class="tag-article-link">
-                        <h3 class="tag-article-title">前端开发框架对比</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>统计分析</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/python-data-analysis/" class="tag-article-link">
-                        <h3 class="tag-article-title">Python数据分析实战</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">数据分析简介 Python 是数据分析的首选语言。
-常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>编辑器</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/markdown-tips/" class="tag-article-link">
-                        <h3 class="tag-article-title">Markdown写作技巧</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">工具</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
+强调 粗体：使用 **文字** 斜体：使用 * …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>组件化</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/frontend-frameworks/ class=tag-article-link><h3 class=tag-article-title>前端开发框架对比</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>统计分析</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/python-data-analysis/ class=tag-article-link><h3 class=tag-article-title>Python数据分析实战</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>数据分析简介 Python 是数据分析的首选语言。
+常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>编辑器</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/markdown-tips/ class=tag-article-link><h3 class=tag-article-title>Markdown写作技巧</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>工具</span></div><p class=tag-article-summary>Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。
 基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。
-强调 粗体：使用 **文字** 斜体：使用 * …</p>
+强调 粗体：使用 **文字** 斜体：使用 * …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>自动化</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/hugo-guide/ class=tag-article-link><h3 class=tag-article-title>Hugo博客搭建指南</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
+什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>自动化部署</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/docker-deployment/ class=tag-article-link><h3 class=tag-article-title>Docker容器化部署实践</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>Docker 简介 Docker 是容器化技术的代表。
+基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>部署</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/hugo-guide/ class=tag-article-link><h3 class=tag-article-title>Hugo博客搭建指南</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-02</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
+什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p></a></article></div></div><div class=tag-group><h2 class=tag-group-title><span class=tag-icon>#</span>
+<span>镜像</span>
+<span class=tag-group-count>1 篇</span></h2><div class=tag-articles><article class=tag-article><a href=https://jixia8.github.io/posts/docker-deployment/ class=tag-article-link><h3 class=tag-article-title>Docker容器化部署实践</h3><div class=tag-article-meta><time class=tag-article-date>2025-12-01</time>
+<span class=tag-article-category>技术</span></div><p class=tag-article-summary>Docker 简介 Docker 是容器化技术的代表。
+基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p></a></article></div></div></div></div></div></main><footer class=site-footer><div class=container><p>&copy; 2025 季夏. All rights reserved.</p></div></footer><script>const searchInput=document.getElementById("search-input"),searchResults=document.getElementById("search-results");if(searchInput){const t=[{title:'"灰姑娘、贵族与垃圾回收：用\\"双层舞会\\"模型解构 Java GC 分代思想"',url:"https://jixia8.github.io/posts/java-gc-generation/",date:"2025-12-02",summary:'"灰姑娘、贵族与垃圾回收：用\\u0026quot;双层舞会\\u0026quot;模型解构 Java GC 分代思想 摘要：你是否想过，Java 虚拟机（JVM）管理内存的方式，像极了一场精心设计的皇家选妃？本文不谈枯燥的算 …"'},{title:'"Go语言初体验"',url:"https://jixia8.github.io/posts/go-first-impression/",date:"2025-12-02",summary:`"为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。\\n简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：\\npackage main …"`},{title:'"Hugo博客搭建指南"',url:"https://jixia8.github.io/posts/hugo-guide/",date:"2025-12-02",summary:`"前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。\\n什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …"`},{title:'"欢迎来到我的博客"',url:"https://jixia8.github.io/posts/welcome/",date:"2025-12-02",summary:`"关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。\\n我会写什么 在这个博客里，我会分享：\\n技术学习笔记 项目开发经验 生活感悟与思考 读书笔记 为什么要写博客 写博客是一个很好的习惯：\\n整理 …"`},{title:'"Markdown写作技巧"',url:"https://jixia8.github.io/posts/markdown-tips/",date:"2025-12-02",summary:`"Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。\\n基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。\\n强调 粗体：使用 **文字** 斜体：使用 * …"`},{title:'"关于我"',url:"https://jixia8.github.io/posts/about/",date:"2025-12-02",summary:`"👋 你好，我是季夏 欢迎来到我的个人博客！这里是我记录学习、分享技术、思考人生的地方。\\n🎯 关于这个博客 这个博客创建于 2025 年，使用 Hugo 搭建，托管在 GitHub Pages 上。我希 …"`},{title:'"Docker容器化部署实践"',url:"https://jixia8.github.io/posts/docker-deployment/",date:"2025-12-01",summary:`"Docker 简介 Docker 是容器化技术的代表。\\n基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …"`},{title:'"前端开发框架对比"',url:"https://jixia8.github.io/posts/frontend-frameworks/",date:"2025-12-01",summary:'"主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …"'},{title:'"Python数据分析实战"',url:"https://jixia8.github.io/posts/python-data-analysis/",date:"2025-12-01",summary:`"数据分析简介 Python 是数据分析的首选语言。\\n常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …"`}];let e=-1;function updateResults(n){if(n.length<2){searchResults.classList.remove("active"),e=-1;return}const s=t.filter(e=>e.title.toLowerCase().includes(n)||e.summary.toLowerCase().includes(n)).slice(0,8);s.length>0?(searchResults.innerHTML=s.map((e,t)=>`
+                    <a href="${e.url}" class="search-result-item" data-index="${t}">
+                        <div class="search-result-title">${e.title}</div>
+                        <div class="search-result-meta">${e.date}</div>
                     </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>自动化</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/hugo-guide/" class="tag-article-link">
-                        <h3 class="tag-article-title">Hugo博客搭建指南</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
-什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>自动化部署</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/docker-deployment/" class="tag-article-link">
-                        <h3 class="tag-article-title">Docker容器化部署实践</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Docker 简介 Docker 是容器化技术的代表。
-基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>部署</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/hugo-guide/" class="tag-article-link">
-                        <h3 class="tag-article-title">Hugo博客搭建指南</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-02</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
-什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-        <div class="tag-group">
-            <h2 class="tag-group-title">
-                <span class="tag-icon">#</span>
-                <span>镜像</span>
-                <span class="tag-group-count">1 篇</span>
-            </h2>
-            <div class="tag-articles">
-                
-                <article class="tag-article">
-                    <a href="http://localhost:1313/posts/docker-deployment/" class="tag-article-link">
-                        <h3 class="tag-article-title">Docker容器化部署实践</h3>
-                        <div class="tag-article-meta">
-                            <time class="tag-article-date">2025-12-01</time>
-                            
-                            <span class="tag-article-category">技术</span>
-                            
-                        </div>
-                        <p class="tag-article-summary">Docker 简介 Docker 是容器化技术的代表。
-基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …</p>
-                    </a>
-                </article>
-                
-            </div>
-        </div>
-        
-    </div>
-</div>
-
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 季夏. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-    
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    
-    if (searchInput) {
-        const posts = [
-            
-            {
-                title: "\"Go语言初体验\"",
-                url: "http:\/\/localhost:1313\/posts\/go-first-impression\/",
-                date: "2025-12-02",
-                summary: "\"为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。\\n简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：\\npackage main …\""
-            },
-            
-            {
-                title: "\"Hugo博客搭建指南\"",
-                url: "http:\/\/localhost:1313\/posts\/hugo-guide\/",
-                date: "2025-12-02",
-                summary: "\"前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。\\n什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …\""
-            },
-            
-            {
-                title: "\"欢迎来到我的博客\"",
-                url: "http:\/\/localhost:1313\/posts\/welcome\/",
-                date: "2025-12-02",
-                summary: "\"关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。\\n我会写什么 在这个博客里，我会分享：\\n技术学习笔记 项目开发经验 生活感悟与思考 读书笔记 为什么要写博客 写博客是一个很好的习惯：\\n整理 …\""
-            },
-            
-            {
-                title: "\"Markdown写作技巧\"",
-                url: "http:\/\/localhost:1313\/posts\/markdown-tips\/",
-                date: "2025-12-02",
-                summary: "\"Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。\\n基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。\\n强调 粗体：使用 **文字** 斜体：使用 * …\""
-            },
-            
-            {
-                title: "\"关于我\"",
-                url: "http:\/\/localhost:1313\/posts\/about\/",
-                date: "2025-12-02",
-                summary: "\"👋 你好，我是季夏 欢迎来到我的个人博客！这里是我记录学习、分享技术、思考人生的地方。\\n🎯 关于这个博客 这个博客创建于 2025 年，使用 Hugo 搭建，托管在 GitHub Pages 上。我希 …\""
-            },
-            
-            {
-                title: "\"Docker容器化部署实践\"",
-                url: "http:\/\/localhost:1313\/posts\/docker-deployment\/",
-                date: "2025-12-01",
-                summary: "\"Docker 简介 Docker 是容器化技术的代表。\\n基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …\""
-            },
-            
-            {
-                title: "\"前端开发框架对比\"",
-                url: "http:\/\/localhost:1313\/posts\/frontend-frameworks\/",
-                date: "2025-12-01",
-                summary: "\"主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …\""
-            },
-            
-            {
-                title: "\"Python数据分析实战\"",
-                url: "http:\/\/localhost:1313\/posts\/python-data-analysis\/",
-                date: "2025-12-01",
-                summary: "\"数据分析简介 Python 是数据分析的首选语言。\\n常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …\""
-            },
-            
-        ];
-
-        let selectedIndex = -1;
-
-        function updateResults(query) {
-            if (query.length < 2) {
-                searchResults.classList.remove('active');
-                selectedIndex = -1;
-                return;
-            }
-
-            const results = posts.filter(post => 
-                post.title.toLowerCase().includes(query) || 
-                post.summary.toLowerCase().includes(query)
-            ).slice(0, 8);
-
-            if (results.length > 0) {
-                searchResults.innerHTML = results.map((post, index) => `
-                    <a href="${post.url}" class="search-result-item" data-index="${index}">
-                        <div class="search-result-title">${post.title}</div>
-                        <div class="search-result-meta">${post.date}</div>
-                    </a>
-                `).join('');
-                searchResults.classList.add('active');
-                selectedIndex = -1;
-            } else {
-                searchResults.innerHTML = '<div class="search-result-item no-click">未找到相关文章</div>';
-                searchResults.classList.add('active');
-                selectedIndex = -1;
-            }
-        }
-
-        searchInput.addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase().trim();
-            updateResults(query);
-        });
-
-        
-        searchInput.addEventListener('keydown', function(e) {
-            const items = searchResults.querySelectorAll('.search-result-item:not(.no-click)');
-            
-            if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
-                updateSelection(items);
-            } else if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                selectedIndex = Math.max(selectedIndex - 1, -1);
-                updateSelection(items);
-            } else if (e.key === 'Enter') {
-                e.preventDefault();
-                if (selectedIndex >= 0 && items[selectedIndex]) {
-                    window.location.href = items[selectedIndex].href;
-                } else if (items.length > 0) {
-                    window.location.href = items[0].href;
-                }
-            } else if (e.key === 'Escape') {
-                searchResults.classList.remove('active');
-                selectedIndex = -1;
-            }
-        });
-
-        function updateSelection(items) {
-            items.forEach((item, index) => {
-                if (index === selectedIndex) {
-                    item.classList.add('selected');
-                } else {
-                    item.classList.remove('selected');
-                }
-            });
-        }
-
-        
-        document.addEventListener('click', function(e) {
-            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                searchResults.classList.remove('active');
-                selectedIndex = -1;
-            }
-        });
-    }
-    </script>
-
-</body>
-</html>
+                `).join(""),searchResults.classList.add("active"),e=-1):(searchResults.innerHTML='<div class="search-result-item no-click">未找到相关文章</div>',searchResults.classList.add("active"),e=-1)}searchInput.addEventListener("input",function(e){const t=e.target.value.toLowerCase().trim();updateResults(t)}),searchInput.addEventListener("keydown",function(t){const n=searchResults.querySelectorAll(".search-result-item:not(.no-click)");t.key==="ArrowDown"?(t.preventDefault(),e===-1?e=0:e=Math.min(e+1,n.length-1),updateSelection(n)):t.key==="ArrowUp"?(t.preventDefault(),e=Math.max(e-1,-1),updateSelection(n)):t.key==="Enter"?(t.preventDefault(),e>=0&&n[e]&&(window.location.href=n[e].href)):t.key==="Escape"&&(searchResults.classList.remove("active"),e=-1)});function updateSelection(t){t.forEach((t,n)=>{n===e?t.classList.add("selected"):t.classList.remove("selected")})}document.addEventListener("click",function(t){!searchInput.contains(t.target)&&!searchResults.contains(t.target)&&(searchResults.classList.remove("active"),e=-1)})}</script></body></html>

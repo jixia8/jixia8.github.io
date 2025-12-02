@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hugo on 季夏的个人博客</title>
-    <link>http://localhost:1313/tags/hugo/</link>
-    <description>Recent content in Hugo on 季夏的个人博客</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 02 Dec 2025 11:30:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hugo博客搭建指南</title>
-      <link>http://localhost:1313/posts/hugo-guide/</link>
-      <pubDate>Tue, 02 Dec 2025 11:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/hugo-guide/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。&lt;/p&gt;&#xA;&lt;h2 id=&#34;什么是-hugo&#34;&gt;什么是 Hugo&lt;/h2&gt;&#xA;&lt;p&gt;Hugo 是一个用 Go 语言编写的静态网站生成器，具有以下优点：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;极快的构建速度&lt;/strong&gt;：毫秒级生成网站&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;简单易用&lt;/strong&gt;：使用 Markdown 写作&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;主题丰富&lt;/strong&gt;：有大量免费主题可选&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;部署方便&lt;/strong&gt;：生成的是纯静态文件&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;搭建步骤&#34;&gt;搭建步骤&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-安装-hugo&#34;&gt;1. 安装 Hugo&lt;/h3&gt;&#xA;&lt;p&gt;在 Windows 上可以使用 Chocolatey：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;choco install hugo-extended -y&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;验证安装：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on 季夏的个人博客</title><link>https://jixia8.github.io/tags/hugo/</link><description>Recent content in Hugo on 季夏的个人博客</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 02 Dec 2025 11:30:00 +0800</lastBuildDate><atom:link href="https://jixia8.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo博客搭建指南</title><link>https://jixia8.github.io/posts/hugo-guide/</link><pubDate>Tue, 02 Dec 2025 11:30:00 +0800</pubDate><guid>https://jixia8.github.io/posts/hugo-guide/</guid><description>&lt;h2 id="前言"&gt;前言&lt;/h2&gt;
+&lt;p&gt;使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。&lt;/p&gt;
+&lt;h2 id="什么是-hugo"&gt;什么是 Hugo&lt;/h2&gt;
+&lt;p&gt;Hugo 是一个用 Go 语言编写的静态网站生成器，具有以下优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;极快的构建速度&lt;/strong&gt;：毫秒级生成网站&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;简单易用&lt;/strong&gt;：使用 Markdown 写作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;主题丰富&lt;/strong&gt;：有大量免费主题可选&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;部署方便&lt;/strong&gt;：生成的是纯静态文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="搭建步骤"&gt;搭建步骤&lt;/h2&gt;
+&lt;h3 id="1-安装-hugo"&gt;1. 安装 Hugo&lt;/h3&gt;
+&lt;p&gt;在 Windows 上可以使用 Chocolatey：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco install hugo-extended -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;验证安装：&lt;/p&gt;</description></item></channel></rss>

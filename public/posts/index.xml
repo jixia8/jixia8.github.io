@@ -1,68 +1,144 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on 季夏的个人博客</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on 季夏的个人博客</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 02 Dec 2025 14:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Go语言初体验</title>
-      <link>http://localhost:1313/posts/go-first-impression/</link>
-      <pubDate>Tue, 02 Dec 2025 14:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/go-first-impression/</guid>
-      <description>&lt;h2 id=&#34;为什么选择-go&#34;&gt;为什么选择 Go&lt;/h2&gt;&#xA;&lt;p&gt;最近开始学习 Go 语言，发现它有很多吸引人的特点。&lt;/p&gt;&#xA;&lt;h3 id=&#34;简洁的语法&#34;&gt;简洁的语法&lt;/h3&gt;&#xA;&lt;p&gt;Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;快速的编译&#34;&gt;快速的编译&lt;/h3&gt;&#xA;&lt;p&gt;Go 的编译速度非常快，几乎是即时的。这让开发体验非常流畅。&lt;/p&gt;&#xA;&lt;h3 id=&#34;强大的并发&#34;&gt;强大的并发&lt;/h3&gt;&#xA;&lt;p&gt;Go 的 goroutine 让并发编程变得简单：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;并发执行&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}()&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;单文件部署&#34;&gt;单文件部署&lt;/h3&gt;&#xA;&lt;p&gt;编译后是单个可执行文件，部署非常方便，不需要像 Java 那样安装运行时环境。&lt;/p&gt;&#xA;&lt;h2 id=&#34;适合的场景&#34;&gt;适合的场景&lt;/h2&gt;&#xA;&lt;p&gt;Go 特别适合：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hugo博客搭建指南</title>
-      <link>http://localhost:1313/posts/hugo-guide/</link>
-      <pubDate>Tue, 02 Dec 2025 11:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/hugo-guide/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。&lt;/p&gt;&#xA;&lt;h2 id=&#34;什么是-hugo&#34;&gt;什么是 Hugo&lt;/h2&gt;&#xA;&lt;p&gt;Hugo 是一个用 Go 语言编写的静态网站生成器，具有以下优点：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;极快的构建速度&lt;/strong&gt;：毫秒级生成网站&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;简单易用&lt;/strong&gt;：使用 Markdown 写作&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;主题丰富&lt;/strong&gt;：有大量免费主题可选&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;部署方便&lt;/strong&gt;：生成的是纯静态文件&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;搭建步骤&#34;&gt;搭建步骤&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-安装-hugo&#34;&gt;1. 安装 Hugo&lt;/h3&gt;&#xA;&lt;p&gt;在 Windows 上可以使用 Chocolatey：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;choco install hugo-extended -y&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;验证安装：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>欢迎来到我的博客</title>
-      <link>http://localhost:1313/posts/welcome/</link>
-      <pubDate>Tue, 02 Dec 2025 10:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/welcome/</guid>
-      <description>&lt;h2 id=&#34;关于这个博客&#34;&gt;关于这个博客&lt;/h2&gt;&#xA;&lt;p&gt;这是我的个人博客，用来记录学习和生活中的点滴。&lt;/p&gt;&#xA;&lt;h2 id=&#34;我会写什么&#34;&gt;我会写什么&lt;/h2&gt;&#xA;&lt;p&gt;在这个博客里，我会分享：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;技术学习笔记&lt;/li&gt;&#xA;&lt;li&gt;项目开发经验&lt;/li&gt;&#xA;&lt;li&gt;生活感悟与思考&lt;/li&gt;&#xA;&lt;li&gt;读书笔记&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;为什么要写博客&#34;&gt;为什么要写博客&lt;/h2&gt;&#xA;&lt;p&gt;写博客是一个很好的习惯：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;整理思路&lt;/strong&gt;：通过写作梳理自己的想法&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;知识沉淀&lt;/strong&gt;：记录下来的知识更容易被回顾&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;分享交流&lt;/strong&gt;：与他人交流学习心得&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;记录成长&lt;/strong&gt;：见证自己的进步&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;关于我&#34;&gt;关于我&lt;/h2&gt;&#xA;&lt;p&gt;我是季夏，一个热爱学习和分享的人。欢迎通过评论或邮件与我交流！&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Markdown写作技巧</title>
-      <link>http://localhost:1313/posts/markdown-tips/</link>
-      <pubDate>Tue, 02 Dec 2025 09:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/markdown-tips/</guid>
-      <description>&lt;h2 id=&#34;markdown-简介&#34;&gt;Markdown 简介&lt;/h2&gt;&#xA;&lt;p&gt;Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。&lt;/p&gt;&#xA;&lt;h2 id=&#34;基础语法&#34;&gt;基础语法&lt;/h2&gt;&#xA;&lt;h3 id=&#34;标题&#34;&gt;标题&lt;/h3&gt;&#xA;&lt;p&gt;使用 &lt;code&gt;#&lt;/code&gt; 创建标题，几个 &lt;code&gt;#&lt;/code&gt; 就是几级标题。&lt;/p&gt;&#xA;&lt;h3 id=&#34;强调&#34;&gt;强调&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;粗体&lt;/strong&gt;：使用 &lt;code&gt;**文字**&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;斜体&lt;/em&gt;：使用 &lt;code&gt;*文字*&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;del&gt;删除线&lt;/del&gt;：使用 &lt;code&gt;~~文字~~&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;列表&#34;&gt;列表&lt;/h3&gt;&#xA;&lt;p&gt;无序列表：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;项目 1&lt;/li&gt;&#xA;&lt;li&gt;项目 2&#xA;&lt;ul&gt;&#xA;&lt;li&gt;子项目 2.1&lt;/li&gt;&#xA;&lt;li&gt;子项目 2.2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;有序列表：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;第一步&lt;/li&gt;&#xA;&lt;li&gt;第二步&lt;/li&gt;&#xA;&lt;li&gt;第三步&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;链接和图片&#34;&gt;链接和图片&lt;/h3&gt;&#xA;&lt;p&gt;链接：&lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;图片：&lt;code&gt;![描述](图片链接)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;代码&#34;&gt;代码&lt;/h3&gt;&#xA;&lt;p&gt;行内代码：&lt;code&gt;code&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;代码块：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>关于我</title>
-      <link>http://localhost:1313/posts/about/</link>
-      <pubDate>Tue, 02 Dec 2025 08:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/about/</guid>
-      <description>&lt;h2 id=&#34;-你好我是季夏&#34;&gt;👋 你好，我是季夏&lt;/h2&gt;&#xA;&lt;p&gt;欢迎来到我的个人博客！这里是我记录学习、分享技术、思考人生的地方。&lt;/p&gt;&#xA;&lt;h2 id=&#34;-关于这个博客&#34;&gt;🎯 关于这个博客&lt;/h2&gt;&#xA;&lt;p&gt;这个博客创建于 2025 年，使用 Hugo 搭建，托管在 GitHub Pages 上。我希望通过写作来：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;整理知识&lt;/strong&gt;：把学到的东西系统化地记录下来&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;深化理解&lt;/strong&gt;：写作是最好的学习方式&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;分享经验&lt;/strong&gt;：希望我的文章能帮助到有需要的人&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;记录成长&lt;/strong&gt;：见证自己的技术成长轨迹&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-技术栈&#34;&gt;💻 技术栈&lt;/h2&gt;&#xA;&lt;p&gt;我目前主要关注以下技术领域：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Docker容器化部署实践</title>
-      <link>http://localhost:1313/posts/docker-deployment/</link>
-      <pubDate>Mon, 01 Dec 2025 18:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/docker-deployment/</guid>
-      <description>&lt;h2 id=&#34;docker-简介&#34;&gt;Docker 简介&lt;/h2&gt;&#xA;&lt;p&gt;Docker 是容器化技术的代表。&lt;/p&gt;&#xA;&lt;h2 id=&#34;基本命令&#34;&gt;基本命令&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build -t myapp .&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -p 8080:8080 myapp&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;kubernetes&#34;&gt;Kubernetes&lt;/h2&gt;&#xA;&lt;p&gt;容器编排的事实标准。&lt;/p&gt;&#xA;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;&#xA;&lt;p&gt;容器化是现代应用部署的标准方式。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>前端开发框架对比</title>
-      <link>http://localhost:1313/posts/frontend-frameworks/</link>
-      <pubDate>Mon, 01 Dec 2025 16:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/frontend-frameworks/</guid>
-      <description>&lt;h2 id=&#34;主流框架&#34;&gt;主流框架&lt;/h2&gt;&#xA;&lt;h3 id=&#34;react&#34;&gt;React&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;组件化开发&lt;/li&gt;&#xA;&lt;li&gt;虚拟 DOM&lt;/li&gt;&#xA;&lt;li&gt;生态丰富&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;vue&#34;&gt;Vue&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;渐进式框架&lt;/li&gt;&#xA;&lt;li&gt;双向绑定&lt;/li&gt;&#xA;&lt;li&gt;简单易学&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;angular&#34;&gt;Angular&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;企业级框架&lt;/li&gt;&#xA;&lt;li&gt;TypeScript&lt;/li&gt;&#xA;&lt;li&gt;完整解决方案&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;选择建议&#34;&gt;选择建议&lt;/h2&gt;&#xA;&lt;p&gt;根据项目需求选择合适的框架。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Python数据分析实战</title>
-      <link>http://localhost:1313/posts/python-data-analysis/</link>
-      <pubDate>Mon, 01 Dec 2025 15:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/python-data-analysis/</guid>
-      <description>&lt;h2 id=&#34;数据分析简介&#34;&gt;数据分析简介&lt;/h2&gt;&#xA;&lt;p&gt;Python 是数据分析的首选语言。&lt;/p&gt;&#xA;&lt;h2 id=&#34;常用库&#34;&gt;常用库&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pandas&lt;/strong&gt;：数据处理&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;NumPy&lt;/strong&gt;：数值计算&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Matplotlib&lt;/strong&gt;：可视化&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;示例代码&#34;&gt;示例代码&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data.csv&amp;#39;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head())&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;&#xA;&lt;p&gt;Python 数据分析生态非常完善。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 季夏的个人博客</title><link>https://jixia8.github.io/posts/</link><description>Recent content in Posts on 季夏的个人博客</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 02 Dec 2025 18:30:00 +0800</lastBuildDate><atom:link href="https://jixia8.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>灰姑娘、贵族与垃圾回收：用"双层舞会"模型解构 Java GC 分代思想</title><link>https://jixia8.github.io/posts/java-gc-generation/</link><pubDate>Tue, 02 Dec 2025 18:30:00 +0800</pubDate><guid>https://jixia8.github.io/posts/java-gc-generation/</guid><description>&lt;h1 id="灰姑娘贵族与垃圾回收用双层舞会模型解构-java-gc-分代思想"&gt;灰姑娘、贵族与垃圾回收：用&amp;quot;双层舞会&amp;quot;模型解构 Java GC 分代思想&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;：你是否想过，Java 虚拟机（JVM）管理内存的方式，像极了一场精心设计的皇家选妃？本文不谈枯燥的算法，而是通过一个&amp;quot;双层舞会&amp;quot;的寓言，带你理解为什么 JVM 要把对象分为&amp;quot;穷人&amp;quot;与&amp;quot;贵族&amp;quot;，以及守卫（GC）是如何在两场舞会之间进行筛选，防止灰姑娘被漏掉，同时避免舞池被无关人员挤爆。&lt;/p&gt;</description></item><item><title>Go语言初体验</title><link>https://jixia8.github.io/posts/go-first-impression/</link><pubDate>Tue, 02 Dec 2025 14:00:00 +0800</pubDate><guid>https://jixia8.github.io/posts/go-first-impression/</guid><description>&lt;h2 id="为什么选择-go"&gt;为什么选择 Go&lt;/h2&gt;
+&lt;p&gt;最近开始学习 Go 语言，发现它有很多吸引人的特点。&lt;/p&gt;
+&lt;h3 id="简洁的语法"&gt;简洁的语法&lt;/h3&gt;
+&lt;p&gt;Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="快速的编译"&gt;快速的编译&lt;/h3&gt;
+&lt;p&gt;Go 的编译速度非常快，几乎是即时的。这让开发体验非常流畅。&lt;/p&gt;
+&lt;h3 id="强大的并发"&gt;强大的并发&lt;/h3&gt;
+&lt;p&gt;Go 的 goroutine 让并发编程变得简单：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;go&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;func&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;并发执行&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="单文件部署"&gt;单文件部署&lt;/h3&gt;
+&lt;p&gt;编译后是单个可执行文件，部署非常方便，不需要像 Java 那样安装运行时环境。&lt;/p&gt;
+&lt;h2 id="适合的场景"&gt;适合的场景&lt;/h2&gt;
+&lt;p&gt;Go 特别适合：&lt;/p&gt;</description></item><item><title>Hugo博客搭建指南</title><link>https://jixia8.github.io/posts/hugo-guide/</link><pubDate>Tue, 02 Dec 2025 11:30:00 +0800</pubDate><guid>https://jixia8.github.io/posts/hugo-guide/</guid><description>&lt;h2 id="前言"&gt;前言&lt;/h2&gt;
+&lt;p&gt;使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。&lt;/p&gt;
+&lt;h2 id="什么是-hugo"&gt;什么是 Hugo&lt;/h2&gt;
+&lt;p&gt;Hugo 是一个用 Go 语言编写的静态网站生成器，具有以下优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;极快的构建速度&lt;/strong&gt;：毫秒级生成网站&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;简单易用&lt;/strong&gt;：使用 Markdown 写作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;主题丰富&lt;/strong&gt;：有大量免费主题可选&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;部署方便&lt;/strong&gt;：生成的是纯静态文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="搭建步骤"&gt;搭建步骤&lt;/h2&gt;
+&lt;h3 id="1-安装-hugo"&gt;1. 安装 Hugo&lt;/h3&gt;
+&lt;p&gt;在 Windows 上可以使用 Chocolatey：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco install hugo-extended -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;验证安装：&lt;/p&gt;</description></item><item><title>欢迎来到我的博客</title><link>https://jixia8.github.io/posts/welcome/</link><pubDate>Tue, 02 Dec 2025 10:00:00 +0800</pubDate><guid>https://jixia8.github.io/posts/welcome/</guid><description>&lt;h2 id="关于这个博客"&gt;关于这个博客&lt;/h2&gt;
+&lt;p&gt;这是我的个人博客，用来记录学习和生活中的点滴。&lt;/p&gt;
+&lt;h2 id="我会写什么"&gt;我会写什么&lt;/h2&gt;
+&lt;p&gt;在这个博客里，我会分享：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;技术学习笔记&lt;/li&gt;
+&lt;li&gt;项目开发经验&lt;/li&gt;
+&lt;li&gt;生活感悟与思考&lt;/li&gt;
+&lt;li&gt;读书笔记&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="为什么要写博客"&gt;为什么要写博客&lt;/h2&gt;
+&lt;p&gt;写博客是一个很好的习惯：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;整理思路&lt;/strong&gt;：通过写作梳理自己的想法&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;知识沉淀&lt;/strong&gt;：记录下来的知识更容易被回顾&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分享交流&lt;/strong&gt;：与他人交流学习心得&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;记录成长&lt;/strong&gt;：见证自己的进步&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="关于我"&gt;关于我&lt;/h2&gt;
+&lt;p&gt;我是季夏，一个热爱学习和分享的人。欢迎通过评论或邮件与我交流！&lt;/p&gt;</description></item><item><title>Markdown写作技巧</title><link>https://jixia8.github.io/posts/markdown-tips/</link><pubDate>Tue, 02 Dec 2025 09:00:00 +0800</pubDate><guid>https://jixia8.github.io/posts/markdown-tips/</guid><description>&lt;h2 id="markdown-简介"&gt;Markdown 简介&lt;/h2&gt;
+&lt;p&gt;Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。&lt;/p&gt;
+&lt;h2 id="基础语法"&gt;基础语法&lt;/h2&gt;
+&lt;h3 id="标题"&gt;标题&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;#&lt;/code&gt; 创建标题，几个 &lt;code&gt;#&lt;/code&gt; 就是几级标题。&lt;/p&gt;
+&lt;h3 id="强调"&gt;强调&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;粗体&lt;/strong&gt;：使用 &lt;code&gt;**文字**&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;斜体&lt;/em&gt;：使用 &lt;code&gt;*文字*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;删除线&lt;/del&gt;：使用 &lt;code&gt;~~文字~~&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="列表"&gt;列表&lt;/h3&gt;
+&lt;p&gt;无序列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;项目 1&lt;/li&gt;
+&lt;li&gt;项目 2
+&lt;ul&gt;
+&lt;li&gt;子项目 2.1&lt;/li&gt;
+&lt;li&gt;子项目 2.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有序列表：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第一步&lt;/li&gt;
+&lt;li&gt;第二步&lt;/li&gt;
+&lt;li&gt;第三步&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="链接和图片"&gt;链接和图片&lt;/h3&gt;
+&lt;p&gt;链接：&lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;图片：&lt;code&gt;![描述](图片链接)&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="代码"&gt;代码&lt;/h3&gt;
+&lt;p&gt;行内代码：&lt;code&gt;code&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码块：&lt;/p&gt;</description></item><item><title>关于我</title><link>https://jixia8.github.io/posts/about/</link><pubDate>Tue, 02 Dec 2025 08:00:00 +0800</pubDate><guid>https://jixia8.github.io/posts/about/</guid><description>&lt;h2 id="-你好我是季夏"&gt;👋 你好，我是季夏&lt;/h2&gt;
+&lt;p&gt;欢迎来到我的个人博客！这里是我记录学习、分享技术、思考人生的地方。&lt;/p&gt;
+&lt;h2 id="-关于这个博客"&gt;🎯 关于这个博客&lt;/h2&gt;
+&lt;p&gt;这个博客创建于 2025 年，使用 Hugo 搭建，托管在 GitHub Pages 上。我希望通过写作来：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;整理知识&lt;/strong&gt;：把学到的东西系统化地记录下来&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;深化理解&lt;/strong&gt;：写作是最好的学习方式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分享经验&lt;/strong&gt;：希望我的文章能帮助到有需要的人&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;记录成长&lt;/strong&gt;：见证自己的技术成长轨迹&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-技术栈"&gt;💻 技术栈&lt;/h2&gt;
+&lt;p&gt;我目前主要关注以下技术领域：&lt;/p&gt;</description></item><item><title>Docker容器化部署实践</title><link>https://jixia8.github.io/posts/docker-deployment/</link><pubDate>Mon, 01 Dec 2025 18:00:00 +0800</pubDate><guid>https://jixia8.github.io/posts/docker-deployment/</guid><description>&lt;h2 id="docker-简介"&gt;Docker 简介&lt;/h2&gt;
+&lt;p&gt;Docker 是容器化技术的代表。&lt;/p&gt;
+&lt;h2 id="基本命令"&gt;基本命令&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker build -t myapp .
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -p 8080:8080 myapp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="kubernetes"&gt;Kubernetes&lt;/h2&gt;
+&lt;p&gt;容器编排的事实标准。&lt;/p&gt;
+&lt;h2 id="总结"&gt;总结&lt;/h2&gt;
+&lt;p&gt;容器化是现代应用部署的标准方式。&lt;/p&gt;</description></item><item><title>前端开发框架对比</title><link>https://jixia8.github.io/posts/frontend-frameworks/</link><pubDate>Mon, 01 Dec 2025 16:30:00 +0800</pubDate><guid>https://jixia8.github.io/posts/frontend-frameworks/</guid><description>&lt;h2 id="主流框架"&gt;主流框架&lt;/h2&gt;
+&lt;h3 id="react"&gt;React&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;组件化开发&lt;/li&gt;
+&lt;li&gt;虚拟 DOM&lt;/li&gt;
+&lt;li&gt;生态丰富&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="vue"&gt;Vue&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;渐进式框架&lt;/li&gt;
+&lt;li&gt;双向绑定&lt;/li&gt;
+&lt;li&gt;简单易学&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="angular"&gt;Angular&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;企业级框架&lt;/li&gt;
+&lt;li&gt;TypeScript&lt;/li&gt;
+&lt;li&gt;完整解决方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="选择建议"&gt;选择建议&lt;/h2&gt;
+&lt;p&gt;根据项目需求选择合适的框架。&lt;/p&gt;</description></item><item><title>Python数据分析实战</title><link>https://jixia8.github.io/posts/python-data-analysis/</link><pubDate>Mon, 01 Dec 2025 15:00:00 +0800</pubDate><guid>https://jixia8.github.io/posts/python-data-analysis/</guid><description>&lt;h2 id="数据分析简介"&gt;数据分析简介&lt;/h2&gt;
+&lt;p&gt;Python 是数据分析的首选语言。&lt;/p&gt;
+&lt;h2 id="常用库"&gt;常用库&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pandas&lt;/strong&gt;：数据处理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NumPy&lt;/strong&gt;：数值计算&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Matplotlib&lt;/strong&gt;：可视化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="示例代码"&gt;示例代码&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; pandas &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt; pd
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; numpy &lt;span style="color:#66d9ef"&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;df &lt;span style="color:#f92672"&gt;=&lt;/span&gt; pd&lt;span style="color:#f92672"&gt;.&lt;/span&gt;read_csv(&lt;span style="color:#e6db74"&gt;&amp;#39;data.csv&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;print(df&lt;span style="color:#f92672"&gt;.&lt;/span&gt;head())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="总结"&gt;总结&lt;/h2&gt;
+&lt;p&gt;Python 数据分析生态非常完善。&lt;/p&gt;</description></item></channel></rss>

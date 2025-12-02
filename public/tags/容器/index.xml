@@ -1,19 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>容器 on 季夏的个人博客</title>
-    <link>http://localhost:1313/tags/%E5%AE%B9%E5%99%A8/</link>
-    <description>Recent content in 容器 on 季夏的个人博客</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Mon, 01 Dec 2025 18:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%AE%B9%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker容器化部署实践</title>
-      <link>http://localhost:1313/posts/docker-deployment/</link>
-      <pubDate>Mon, 01 Dec 2025 18:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/docker-deployment/</guid>
-      <description>&lt;h2 id=&#34;docker-简介&#34;&gt;Docker 简介&lt;/h2&gt;&#xA;&lt;p&gt;Docker 是容器化技术的代表。&lt;/p&gt;&#xA;&lt;h2 id=&#34;基本命令&#34;&gt;基本命令&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker build -t myapp .&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -p 8080:8080 myapp&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;kubernetes&#34;&gt;Kubernetes&lt;/h2&gt;&#xA;&lt;p&gt;容器编排的事实标准。&lt;/p&gt;&#xA;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;&#xA;&lt;p&gt;容器化是现代应用部署的标准方式。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>容器 on 季夏的个人博客</title><link>https://jixia8.github.io/tags/%E5%AE%B9%E5%99%A8/</link><description>Recent content in 容器 on 季夏的个人博客</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 01 Dec 2025 18:00:00 +0800</lastBuildDate><atom:link href="https://jixia8.github.io/tags/%E5%AE%B9%E5%99%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker容器化部署实践</title><link>https://jixia8.github.io/posts/docker-deployment/</link><pubDate>Mon, 01 Dec 2025 18:00:00 +0800</pubDate><guid>https://jixia8.github.io/posts/docker-deployment/</guid><description>&lt;h2 id="docker-简介"&gt;Docker 简介&lt;/h2&gt;
+&lt;p&gt;Docker 是容器化技术的代表。&lt;/p&gt;
+&lt;h2 id="基本命令"&gt;基本命令&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker build -t myapp .
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker run -p 8080:8080 myapp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="kubernetes"&gt;Kubernetes&lt;/h2&gt;
+&lt;p&gt;容器编排的事实标准。&lt;/p&gt;
+&lt;h2 id="总结"&gt;总结&lt;/h2&gt;
+&lt;p&gt;容器化是现代应用部署的标准方式。&lt;/p&gt;</description></item></channel></rss>
