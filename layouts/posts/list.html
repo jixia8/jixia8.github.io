@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="archives-page">
+    <div class="page-header">
+        <h1 class="page-title">📚 文章归档</h1>
+        <p class="page-subtitle">共 {{ len .RegularPages }} 篇文章</p>
+    </div>
+
+    <div class="timeline">
+        {{ range (.RegularPages.GroupByDate "2006") }}
+        <div class="timeline-year">
+            <div class="timeline-year-marker">
+                <span class="year-number">{{ .Key }}</span>
+                <span class="year-count">{{ len .Pages }} 篇</span>
+            </div>
+            
+            <div class="timeline-months">
+                {{ range .Pages.GroupByDate "January" }}
+                <div class="timeline-month">
+                    <h3 class="month-name">{{ .Key }}</h3>
+                    <div class="month-articles">
+                        {{ range .Pages }}
+                        <article class="timeline-article">
+                            <div class="article-dot"></div>
+                            <time class="article-date">{{ .Date.Format "01-02" }}</time>
+                            <a href="{{ .Permalink }}" class="article-link">
+                                <h4 class="article-title">{{ .Title }}</h4>
+                                <div class="article-meta">
+                                    {{ with .Params.categories }}
+                                    <span class="article-category">{{ index . 0 }}</span>
+                                    {{ end }}
+                                    {{ with .Params.tags }}
+                                    <span class="article-tags">
+                                        {{ range first 3 . }}
+                                        <span class="tag-badge">{{ . }}</span>
+                                        {{ end }}
+                                    </span>
+                                    {{ end }}
+                                </div>
+                            </a>
+                        </article>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

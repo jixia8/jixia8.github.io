@@ -2,15 +2,20 @@
     <div class="widget widget-author-info">
         <h3 class="widget-title">作者</h3>
         <div class="author-box">
-            <div class="author-avatar">
-                {{ if (fileExists "static/images/avatar.jpg") }}
-                <img src="/images/avatar.jpg" alt="{{ .Site.Params.author }}" />
-                {{ else }}
-                <div class="avatar-placeholder">{{ substr .Site.Params.author 0 1 }}</div>
-                {{ end }}
-            </div>
-            <h4 class="author-name">{{ .Site.Params.author }}</h4>
-            <p class="author-bio">{{ .Site.Params.description }}</p>
+            <a href="/posts/about/" class="author-link">
+                <div class="author-avatar">
+                    {{ if (fileExists "static/images/avatar.jpg") }}
+                    <img src="/images/avatar.jpg" alt="{{ .Site.Params.author }}" />
+                    {{ else }}
+                    <div class="avatar-placeholder">{{ substr .Site.Params.author 0 1 }}</div>
+                    {{ end }}
+                </div>
+                <div class="author-info-text">
+                    <h4 class="author-name">{{ .Site.Params.author }}</h4>
+                    <p class="author-bio">{{ .Site.Params.description }}</p>
+                    <span class="view-more">查看详情 →</span>
+                </div>
+            </a>
         </div>
     </div>
 

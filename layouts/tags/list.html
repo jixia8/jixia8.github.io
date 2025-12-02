@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="tags-page">
+    <div class="page-header">
+        <h1 class="page-title">🏷️ 标签云</h1>
+        <p class="page-subtitle">共 {{ len .Site.Taxonomies.tags }} 个标签，{{ len .Pages }} 篇文章</p>
+    </div>
+
+    <div class="tags-cloud">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        {{ $count := len $taxonomy }}
+        {{ $weight := div (mul $count 100) (add (len $.Site.RegularPages) 1) }}
+        {{ $size := add 0.8 (mul 0.02 (math.Log $count)) }}
+        <a href="{{ printf "/tags/%s" ($name | urlize) | relLangURL }}" 
+           class="tag-item" 
+           title="{{ $count }} 篇文章">
+            <span class="tag-name">{{ $name }}</span>
+            <span class="tag-count">{{ $count }}</span>
+        </a>
+        {{ end }}
+    </div>
+
+    <div class="tags-list">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <div class="tag-group">
+            <h2 class="tag-group-title">
+                <span class="tag-icon">#</span>
+                <span>{{ $name }}</span>
+                <span class="tag-group-count">{{ len $taxonomy }} 篇</span>
+            </h2>
+            <div class="tag-articles">
+                {{ range $taxonomy.Pages.ByDate.Reverse }}
+                <article class="tag-article">
+                    <a href="{{ .Permalink }}" class="tag-article-link">
+                        <h3 class="tag-article-title">{{ .Title }}</h3>
+                        <div class="tag-article-meta">
+                            <time class="tag-article-date">{{ .Date.Format "2006-01-02" }}</time>
+                            {{ with .Params.categories }}
+                            <span class="tag-article-category">{{ index . 0 }}</span>
+                            {{ end }}
+                        </div>
+                        <p class="tag-article-summary">{{ .Summary | plainify | truncate 100 }}</p>
+                    </a>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
