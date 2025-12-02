@@ -134,12 +134,16 @@ a:hover { color: var(--primary-hover); }
 .search-result-item:last-child {
     border-bottom: none;
 }
-.search-result-item:hover {
+.search-result-item:hover,
+.search-result-item.selected {
     background: var(--bg-body);
 }
 .search-result-item.no-click {
     cursor: default;
     pointer-events: none;
+}
+.search-result-item.selected {
+    background: var(--bg-hover);
 }
 .search-result-title {
     font-size: 0.9rem;

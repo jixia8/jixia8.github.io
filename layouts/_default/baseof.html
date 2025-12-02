@@ -53,22 +53,24 @@
     const searchResults = document.getElementById('search-results');
     
     if (searchInput) {
+        const baseUrl = '{{ .Site.BaseURL }}';
         const posts = [
             {{ range (where .Site.RegularPages "Type" "posts") }}
             {
                 title: {{ .Title | jsonify }},
-                url: {{ .RelPermalink | jsonify }},
+                url: {{ .Permalink | jsonify }},
                 date: {{ .Date.Format "2006-01-02" | jsonify }},
                 summary: {{ .Summary | plainify | truncate 100 | jsonify }}
             },
             {{ end }}
         ];
 
-        searchInput.addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase().trim();
-            
+        let selectedIndex = -1;
+
+        function updateResults(query) {
             if (query.length < 2) {
                 searchResults.classList.remove('active');
+                selectedIndex = -1;
                 return;
             }
 
@@ -78,26 +80,66 @@
             ).slice(0, 8);
 
             if (results.length > 0) {
-                searchResults.innerHTML = results.map(post => {
-                    const fullUrl = post.url.startsWith('http') ? post.url : (window.location.origin + post.url);
-                    return `
-                        <a href="${post.url}" class="search-result-item">
-                            <div class="search-result-title">${post.title}</div>
-                            <div class="search-result-meta">${post.date}</div>
-                        </a>
-                    `;
-                }).join('');
+                searchResults.innerHTML = results.map((post, index) => `
+                    <a href="${post.url}" class="search-result-item" data-index="${index}">
+                        <div class="search-result-title">${post.title}</div>
+                        <div class="search-result-meta">${post.date}</div>
+                    </a>
+                `).join('');
                 searchResults.classList.add('active');
+                selectedIndex = -1;
             } else {
                 searchResults.innerHTML = '<div class="search-result-item no-click">未找到相关文章</div>';
                 searchResults.classList.add('active');
+                selectedIndex = -1;
+            }
+        }
+
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            updateResults(query);
+        });
+
+        // Keyboard navigation
+        searchInput.addEventListener('keydown', function(e) {
+            const items = searchResults.querySelectorAll('.search-result-item:not(.no-click)');
+            
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+                updateSelection(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectedIndex = Math.max(selectedIndex - 1, -1);
+                updateSelection(items);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selectedIndex >= 0 && items[selectedIndex]) {
+                    window.location.href = items[selectedIndex].href;
+                } else if (items.length > 0) {
+                    window.location.href = items[0].href;
+                }
+            } else if (e.key === 'Escape') {
+                searchResults.classList.remove('active');
+                selectedIndex = -1;
             }
         });
+
+        function updateSelection(items) {
+            items.forEach((item, index) => {
+                if (index === selectedIndex) {
+                    item.classList.add('selected');
+                } else {
+                    item.classList.remove('selected');
+                }
+            });
+        }
 
         // Close search results when clicking outside
         document.addEventListener('click', function(e) {
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
                 searchResults.classList.remove('active');
+                selectedIndex = -1;
             }
         });
     }

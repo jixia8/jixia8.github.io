@@ -554,15 +554,18 @@ Markdown 是一种轻量级标记语言，让你专注于内容而不是格式�
             ).slice(0, 8);
 
             if (results.length > 0) {
-                searchResults.innerHTML = results.map(post => `
-                    <div class="search-result-item" onclick="window.location.href='${post.url}'">
-                        <div class="search-result-title">${post.title}</div>
-                        <div class="search-result-meta">${post.date}</div>
-                    </div>
-                `).join('');
+                searchResults.innerHTML = results.map(post => {
+                    const fullUrl = post.url.startsWith('http') ? post.url : (window.location.origin + post.url);
+                    return `
+                        <a href="${post.url}" class="search-result-item">
+                            <div class="search-result-title">${post.title}</div>
+                            <div class="search-result-meta">${post.date}</div>
+                        </a>
+                    `;
+                }).join('');
                 searchResults.classList.add('active');
             } else {
-                searchResults.innerHTML = '<div class="search-result-item">未找到相关文章</div>';
+                searchResults.innerHTML = '<div class="search-result-item no-click">未找到相关文章</div>';
                 searchResults.classList.add('active');
             }
         });
