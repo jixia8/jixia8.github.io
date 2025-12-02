@@ -53,13 +53,12 @@
     const searchResults = document.getElementById('search-results');
     
     if (searchInput) {
-        const baseUrl = '{{ .Site.BaseURL }}';
         const posts = [
             {{ range (where .Site.RegularPages "Type" "posts") }}
             {
                 title: {{ .Title | jsonify }},
-                url: {{ .Permalink | jsonify }},
-                date: {{ .Date.Format "2006-01-02" | jsonify }},
+                url: "{{ .Permalink }}",
+                date: "{{ .Date.Format "2006-01-02" }}",
                 summary: {{ .Summary | plainify | truncate 100 | jsonify }}
             },
             {{ end }}
