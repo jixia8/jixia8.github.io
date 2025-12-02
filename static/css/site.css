@@ -123,16 +123,23 @@ a:hover { color: var(--primary-hover); }
     display: block;
 }
 .search-result-item {
+    display: block;
     padding: 10px 14px;
     border-bottom: 1px solid var(--border);
     cursor: pointer;
     transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
 }
 .search-result-item:last-child {
     border-bottom: none;
 }
 .search-result-item:hover {
     background: var(--bg-body);
+}
+.search-result-item.no-click {
+    cursor: default;
+    pointer-events: none;
 }
 .search-result-title {
     font-size: 0.9rem;
