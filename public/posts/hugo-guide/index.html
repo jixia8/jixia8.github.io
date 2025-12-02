@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
     <title>Hugo博客搭建指南 | 季夏的个人博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="前言
 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
 什么是 Hugo
@@ -19,41 +21,130 @@ Hugo 是一个用 Go 语言编写的静态网站生成器，具有以下优点�
 在 Windows 上可以使用 Chocolatey：
 choco install hugo-extended -y
 验证安装：">
-    <link rel="stylesheet" href="/css/site.css">
-</head>
-<body>
+    <meta name="generator" content="Hugo 0.152.2">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    <meta name="author" content="季夏">
+    
 
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="site-branding">
-                <div class="header-avatar">
-                    
-                    <img src="/images/avatar.jpg" alt="季夏" />
-                    
-                </div>
-                <a href="/" class="site-title">季夏的个人博客</a>
-            </div>
-            <div class="header-search">
-                <input type="text" id="search-input" placeholder="搜索文章..." />
-                <div id="search-results" class="search-results"></div>
-            </div>
-            <nav class="site-nav">
-                <ul>
-                    
-                    <li><a href="/">首页</a></li>
-                    
-                    <li><a href="/posts/">归档</a></li>
-                    
-                    <li><a href="/tags/">标签</a></li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
 
-    <main class="site-main">
-        <div class="container">
-            
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/hugo-guide/">
+    
+
+    
+    
+    <meta property="og:url" content="http://localhost:1313/posts/hugo-guide/">
+  <meta property="og:site_name" content="季夏的个人博客">
+  <meta property="og:title" content="Hugo博客搭建指南">
+  <meta property="og:description" content="前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
+什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有以下优点：
+极快的构建速度：毫秒级生成网站 简单易用：使用 Markdown 写作 主题丰富：有大量免费主题可选 部署方便：生成的是纯静态文件 搭建步骤 1. 安装 Hugo 在 Windows 上可以使用 Chocolatey：
+choco install hugo-extended -y 验证安装：">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-12-02T11:30:00+08:00">
+    <meta property="article:modified_time" content="2025-12-02T11:30:00+08:00">
+    <meta property="article:tag" content="Hugo">
+    <meta property="article:tag" content="GitHub Pages">
+    <meta property="article:tag" content="博客">
+    <meta property="article:tag" content="部署">
+    <meta property="article:tag" content="自动化">
+    <meta property="article:tag" content="CI/CD">
+
+  <meta itemprop="name" content="Hugo博客搭建指南">
+  <meta itemprop="description" content="前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
+什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有以下优点：
+极快的构建速度：毫秒级生成网站 简单易用：使用 Markdown 写作 主题丰富：有大量免费主题可选 部署方便：生成的是纯静态文件 搭建步骤 1. 安装 Hugo 在 Windows 上可以使用 Chocolatey：
+choco install hugo-extended -y 验证安装：">
+  <meta itemprop="datePublished" content="2025-12-02T11:30:00+08:00">
+  <meta itemprop="dateModified" content="2025-12-02T11:30:00+08:00">
+  <meta itemprop="wordCount" content="338">
+  <meta itemprop="keywords" content="Hugo,GitHub Pages,博客,部署,自动化,CI/CD">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hugo博客搭建指南">
+  <meta name="twitter:description" content="前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。
+什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有以下优点：
+极快的构建速度：毫秒级生成网站 简单易用：使用 Markdown 写作 主题丰富：有大量免费主题可选 部署方便：生成的是纯静态文件 搭建步骤 1. 安装 Hugo 在 Windows 上可以使用 Chocolatey：
+choco install hugo-extended -y 验证安装：">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        季夏的个人博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="首页 page">
+              首页
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/posts/" title="归档 page">
+              归档
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tags/" title="标签 page">
+              标签
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Hugo博客搭建指南
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
 <div class="article-layout">
     <aside class="author-aside">
     <div class="widget widget-author-info">
@@ -419,160 +510,16 @@ choco install hugo-extended -y
 
 </div>
 
-        </div>
     </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  季夏的个人博客 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 季夏. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-    
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    
-    if (searchInput) {
-        const posts = [
-            
-            {
-                title: "\"Go语言初体验\"",
-                url: "https:\/\/jixia8.github.io\/posts\/go-first-impression\/",
-                date: "2025-12-02",
-                summary: "\"为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。\\n简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：\\npackage main …\""
-            },
-            
-            {
-                title: "\"Hugo博客搭建指南\"",
-                url: "https:\/\/jixia8.github.io\/posts\/hugo-guide\/",
-                date: "2025-12-02",
-                summary: "\"前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。\\n什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …\""
-            },
-            
-            {
-                title: "\"欢迎来到我的博客\"",
-                url: "https:\/\/jixia8.github.io\/posts\/welcome\/",
-                date: "2025-12-02",
-                summary: "\"关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。\\n我会写什么 在这个博客里，我会分享：\\n技术学习笔记 项目开发经验 生活感悟与思考 读书笔记 为什么要写博客 写博客是一个很好的习惯：\\n整理 …\""
-            },
-            
-            {
-                title: "\"Markdown写作技巧\"",
-                url: "https:\/\/jixia8.github.io\/posts\/markdown-tips\/",
-                date: "2025-12-02",
-                summary: "\"Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。\\n基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。\\n强调 粗体：使用 **文字** 斜体：使用 * …\""
-            },
-            
-            {
-                title: "\"关于我\"",
-                url: "https:\/\/jixia8.github.io\/posts\/about\/",
-                date: "2025-12-02",
-                summary: "\"👋 你好，我是季夏 欢迎来到我的个人博客！这里是我记录学习、分享技术、思考人生的地方。\\n🎯 关于这个博客 这个博客创建于 2025 年，使用 Hugo 搭建，托管在 GitHub Pages 上。我希 …\""
-            },
-            
-            {
-                title: "\"Docker容器化部署实践\"",
-                url: "https:\/\/jixia8.github.io\/posts\/docker-deployment\/",
-                date: "2025-12-01",
-                summary: "\"Docker 简介 Docker 是容器化技术的代表。\\n基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …\""
-            },
-            
-            {
-                title: "\"前端开发框架对比\"",
-                url: "https:\/\/jixia8.github.io\/posts\/frontend-frameworks\/",
-                date: "2025-12-01",
-                summary: "\"主流框架 React 组件化开发 虚拟 DOM 生态丰富 Vue 渐进式框架 双向绑定 简单易学 Angular 企业级框架 TypeScript 完整解决方案 选择建议 根据项目需求选择合适的框架。 …\""
-            },
-            
-            {
-                title: "\"Python数据分析实战\"",
-                url: "https:\/\/jixia8.github.io\/posts\/python-data-analysis\/",
-                date: "2025-12-01",
-                summary: "\"数据分析简介 Python 是数据分析的首选语言。\\n常用库 Pandas：数据处理 NumPy：数值计算 Matplotlib：可视化 示例代码 import pandas as pd import …\""
-            },
-            
-        ];
-
-        let selectedIndex = -1;
-
-        function updateResults(query) {
-            if (query.length < 2) {
-                searchResults.classList.remove('active');
-                selectedIndex = -1;
-                return;
-            }
-
-            const results = posts.filter(post => 
-                post.title.toLowerCase().includes(query) || 
-                post.summary.toLowerCase().includes(query)
-            ).slice(0, 8);
-
-            if (results.length > 0) {
-                searchResults.innerHTML = results.map((post, index) => `
-                    <a href="${post.url}" class="search-result-item" data-index="${index}">
-                        <div class="search-result-title">${post.title}</div>
-                        <div class="search-result-meta">${post.date}</div>
-                    </a>
-                `).join('');
-                searchResults.classList.add('active');
-                selectedIndex = -1;
-            } else {
-                searchResults.innerHTML = '<div class="search-result-item no-click">未找到相关文章</div>';
-                searchResults.classList.add('active');
-                selectedIndex = -1;
-            }
-        }
-
-        searchInput.addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase().trim();
-            updateResults(query);
-        });
-
-        
-        searchInput.addEventListener('keydown', function(e) {
-            const items = searchResults.querySelectorAll('.search-result-item:not(.no-click)');
-            
-            if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
-                updateSelection(items);
-            } else if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                selectedIndex = Math.max(selectedIndex - 1, -1);
-                updateSelection(items);
-            } else if (e.key === 'Enter') {
-                e.preventDefault();
-                if (selectedIndex >= 0 && items[selectedIndex]) {
-                    window.location.href = items[selectedIndex].href;
-                } else if (items.length > 0) {
-                    window.location.href = items[0].href;
-                }
-            } else if (e.key === 'Escape') {
-                searchResults.classList.remove('active');
-                selectedIndex = -1;
-            }
-        });
-
-        function updateSelection(items) {
-            items.forEach((item, index) => {
-                if (index === selectedIndex) {
-                    item.classList.add('selected');
-                } else {
-                    item.classList.remove('selected');
-                }
-            });
-        }
-
-        
-        document.addEventListener('click', function(e) {
-            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                searchResults.classList.remove('active');
-                selectedIndex = -1;
-            }
-        });
-    }
-    </script>
-
-</body>
+  </body>
 </html>

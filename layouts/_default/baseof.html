@@ -105,7 +105,11 @@
             
             if (e.key === 'ArrowDown') {
                 e.preventDefault();
-                selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+                if (selectedIndex === -1) {
+                    selectedIndex = 0;
+                } else {
+                    selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+                }
                 updateSelection(items);
             } else if (e.key === 'ArrowUp') {
                 e.preventDefault();
@@ -115,8 +119,6 @@
                 e.preventDefault();
                 if (selectedIndex >= 0 && items[selectedIndex]) {
                     window.location.href = items[selectedIndex].href;
-                } else if (items.length > 0) {
-                    window.location.href = items[0].href;
                 }
             } else if (e.key === 'Escape') {
                 searchResults.classList.remove('active');

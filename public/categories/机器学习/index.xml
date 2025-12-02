@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>机器学习 on 季夏的个人博客</title>
-    <link>https://jixia8.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+    <link>http://localhost:1313/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 机器学习 on 季夏的个人博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 01 Dec 2025 15:00:00 +0800</lastBuildDate>
-    <atom:link href="https://jixia8.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python数据分析实战</title>
-      <link>https://jixia8.github.io/posts/python-data-analysis/</link>
+      <link>http://localhost:1313/posts/python-data-analysis/</link>
       <pubDate>Mon, 01 Dec 2025 15:00:00 +0800</pubDate>
-      <guid>https://jixia8.github.io/posts/python-data-analysis/</guid>
+      <guid>http://localhost:1313/posts/python-data-analysis/</guid>
       <description>&lt;h2 id=&#34;数据分析简介&#34;&gt;数据分析简介&lt;/h2&gt;&#xA;&lt;p&gt;Python 是数据分析的首选语言。&lt;/p&gt;&#xA;&lt;h2 id=&#34;常用库&#34;&gt;常用库&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pandas&lt;/strong&gt;：数据处理&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;NumPy&lt;/strong&gt;：数值计算&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Matplotlib&lt;/strong&gt;：可视化&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;示例代码&#34;&gt;示例代码&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data.csv&amp;#39;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head())&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;&#xA;&lt;p&gt;Python 数据分析生态非常完善。&lt;/p&gt;</description>
     </item>
   </channel>

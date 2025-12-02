@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>前端框架 on 季夏的个人博客</title>
-    <link>https://jixia8.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/</link>
+    <link>http://localhost:1313/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/</link>
     <description>Recent content in 前端框架 on 季夏的个人博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 01 Dec 2025 16:30:00 +0800</lastBuildDate>
-    <atom:link href="https://jixia8.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>前端开发框架对比</title>
-      <link>https://jixia8.github.io/posts/frontend-frameworks/</link>
+      <link>http://localhost:1313/posts/frontend-frameworks/</link>
       <pubDate>Mon, 01 Dec 2025 16:30:00 +0800</pubDate>
-      <guid>https://jixia8.github.io/posts/frontend-frameworks/</guid>
+      <guid>http://localhost:1313/posts/frontend-frameworks/</guid>
       <description>&lt;h2 id=&#34;主流框架&#34;&gt;主流框架&lt;/h2&gt;&#xA;&lt;h3 id=&#34;react&#34;&gt;React&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;组件化开发&lt;/li&gt;&#xA;&lt;li&gt;虚拟 DOM&lt;/li&gt;&#xA;&lt;li&gt;生态丰富&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;vue&#34;&gt;Vue&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;渐进式框架&lt;/li&gt;&#xA;&lt;li&gt;双向绑定&lt;/li&gt;&#xA;&lt;li&gt;简单易学&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;angular&#34;&gt;Angular&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;企业级框架&lt;/li&gt;&#xA;&lt;li&gt;TypeScript&lt;/li&gt;&#xA;&lt;li&gt;完整解决方案&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;选择建议&#34;&gt;选择建议&lt;/h2&gt;&#xA;&lt;p&gt;根据项目需求选择合适的框架。&lt;/p&gt;</description>
     </item>
   </channel>
