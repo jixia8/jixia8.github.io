@@ -2,7 +2,7 @@
 title: "拒绝 Thread.sleep！基于“线程池+延迟任务”的高性能异步系统设计"
 date: 2025-12-03T09:00:00+08:00
 draft: false
-categories: ["后端开发", "架构", "并发"]
+categories: ["技术", "后端开发", "架构", "并发"]
 tags: ["Java", "Redis", "架构", "并发", "性能"]
 summary: "用线程池 + 延迟任务替代 Thread.sleep 的架构设计与实现思路，包括 Redis ZSet 示例与内存优化策略。"
 notes:
