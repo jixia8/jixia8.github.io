@@ -1,9 +1,13 @@
 ---
 title: "拒绝 Thread.sleep！基于“线程池+延迟任务”的高性能异步系统设计"
-date: 2025-12-03T00:00:00+08:00
-tags: [Java, Architecture, Concurrency, Redis, Performance]
-categories: ["Backend Development"]
+date: 2025-12-03T09:00:00+08:00
 draft: false
+categories: ["后端开发", "架构", "并发"]
+tags: ["Java", "Architecture", "Concurrency", "Redis", "Performance"]
+summary: "用线程池 + 延迟任务替代 Thread.sleep 的架构设计与实现思路，包括 Redis ZSet 示例与内存优化策略。"
+notes:
+    - "强调解耦触发时间与执行逻辑，适用于订单超时、失败重试、活动提醒等场景。"
+    - "示例采用 Redis ZSet 做为延迟等待层，调度器只负责搬运，执行由独立线程池完成。"
 ---
 
 在后端开发中，我们经常遇到这样的需求：
