@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary }}{{ end }}">
-    <link rel="icon" href="{{ "images/avatar.jpg" | relURL }}" type="image/jpeg">
+    <link rel="icon" href="{{ "images/avatar.jpg" | relURL }}?v={{ now.Unix }}" type="image/jpeg">
     <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
 </head>
 <body>
