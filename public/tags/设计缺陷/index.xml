@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设计缺陷 on 季夏的个人博客</title>
+    <link>https://jixia8.github.io/tags/%E8%AE%BE%E8%AE%A1%E7%BC%BA%E9%99%B7/</link>
+    <description>Recent content in 设计缺陷 on 季夏的个人博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Dec 2025 18:45:00 +0800</lastBuildDate>
+    <atom:link href="https://jixia8.github.io/tags/%E8%AE%BE%E8%AE%A1%E7%BC%BA%E9%99%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>万物之祖：重新审视 Java Object 类的设计与缺陷</title>
+      <link>https://jixia8.github.io/posts/object-class-design/</link>
+      <pubDate>Tue, 02 Dec 2025 18:45:00 +0800</pubDate>
+      <guid>https://jixia8.github.io/posts/object-class-design/</guid>
+      <description>&lt;p&gt;在 Java 世界中，&lt;code&gt;java.lang.Object&lt;/code&gt; 是万物之祖：所有类都直接或间接继承自它。&#xA;重读 &lt;code&gt;Object&lt;/code&gt; 源码后，你会发现它既有语言设计上的精华，也背负了不少历史包袱。本文从方法级别出发，结合设计哲学与资源管理实践，讨论 &lt;code&gt;Object&lt;/code&gt; 的优缺点。&lt;/p&gt;&#xA;&lt;h2 id=&#34;基础契约身份与描述&#34;&gt;基础契约：身份与描述&lt;/h2&gt;&#xA;&lt;h3 id=&#34;运行时类型&#34;&gt;运行时类型&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;native&lt;/span&gt; Class&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; getClass();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;getClass()&lt;/code&gt; 被 &lt;code&gt;final&lt;/code&gt; 修饰，保证类型信息不可被篡改，这是类型系统安全性的基石。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

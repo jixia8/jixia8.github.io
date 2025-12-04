@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on 季夏的个人博客</title>
+    <link>https://jixia8.github.io/tags/redis/</link>
+    <description>Recent content in Redis on 季夏的个人博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Dec 2025 09:00:00 +0800</lastBuildDate>
+    <atom:link href="https://jixia8.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>拒绝 Thread.sleep！基于“线程池&#43;延迟任务”的高性能异步系统设计</title>
+      <link>https://jixia8.github.io/posts/refuse-thread-sleep/</link>
+      <pubDate>Wed, 03 Dec 2025 09:00:00 +0800</pubDate>
+      <guid>https://jixia8.github.io/posts/refuse-thread-sleep/</guid>
+      <description>用线程池 + 延迟任务替代 Thread.sleep 的架构设计与实现思路，包括 Redis ZSet 示例与内存优化策略。</description>
+    </item>
+  </channel>
+</rss>

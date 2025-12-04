@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>内存泄漏 on 季夏的个人博客</title>
+    <link>https://jixia8.github.io/tags/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/</link>
+    <description>Recent content in 内存泄漏 on 季夏的个人博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Dec 2025 19:30:00 +0800</lastBuildDate>
+    <atom:link href="https://jixia8.github.io/tags/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>造物主的视角：如果让你亲手设计 ThreadLocal</title>
+      <link>https://jixia8.github.io/posts/threadlocal-design-thinking/</link>
+      <pubDate>Tue, 02 Dec 2025 19:30:00 +0800</pubDate>
+      <guid>https://jixia8.github.io/posts/threadlocal-design-thinking/</guid>
+      <description>&lt;h2 id=&#34;写在前面缘起&#34;&gt;写在前面：缘起&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;这篇文章的诞生，并不是因为我对 ThreadLocal 有多深的认知，恰恰相反，是因为我曾经完全看不懂它。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;面对源码中复杂的引用关系和神奇的魔数，我一度陷入了细节的泥沼。为了啃下这块硬骨头，我逼迫自己跳出来，不再去想&amp;quot;它现在是什么样&amp;quot;，而是去想&amp;quot;如果是我，为了解决这个问题，我会把它设计成什么样&amp;quot;。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

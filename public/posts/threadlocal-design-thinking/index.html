@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>造物主的视角：如果让你亲手设计 ThreadLocal | 季夏的个人博客</title>
+    <meta name="description" content="写在前面：缘起
+这篇文章的诞生，并不是因为我对 ThreadLocal 有多深的认知，恰恰相反，是因为我曾经完全看不懂它。
+面对源码中复杂的引用关系和神奇的魔数，我一度陷入了细节的泥沼。为了啃下这块硬骨头，我逼迫自己跳出来，不再去想&quot;它现在是什么样&quot;，而是去想&quot;如果是我，为了解决这个问题，我会把它设计成什么样&quot;。">
+    <link rel="icon" href="/images/favicon.png?v=1764830876" type="image/png">
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="site-branding">
+                <div class="header-avatar">
+                    
+                    <img src="/images/avatar.jpg" alt="季夏" />
+                    
+                </div>
+                <a href="/" class="site-title">季夏的个人博客</a>
+            </div>
+            <div class="header-search">
+                <input type="text" id="search-input" placeholder="搜索文章..." />
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <nav class="site-nav">
+                <ul>
+                    
+                    <li><a href="/">首页</a></li>
+                    
+                    <li><a href="/posts/">归档</a></li>
+                    
+                    <li><a href="/tags/">标签</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            
+<div class="article-layout">
+    <aside class="author-aside">
+    <div class="widget widget-author-info">
+        <h3 class="widget-title">作者</h3>
+        <div class="author-box">
+            <a href="/posts/about/" class="author-link">
+                <div class="author-avatar">
+                    
+                    <img src="/images/avatar.jpg" alt="季夏" />
+                    
+                </div>
+                <div class="author-info-text">
+                    <h4 class="author-name">季夏</h4>
+                    <p class="author-bio">个人博客</p>
+                    <span class="view-more">查看详情 →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    
+    <div class="widget widget-quote">
+        <h3 class="widget-title">小记</h3>
+        <div class="widget-body">
+            
+            <blockquote class="daily-quote">
+                <p>不要死记源码，尝试从设计者的角度还原 ThreadLocal 的演进过程。</p>
+            </blockquote>
+            
+            <blockquote class="daily-quote">
+                <p>ThreadLocal 的本质不是&#39;存储&#39;，而是&#39;映射&#39;。</p>
+            </blockquote>
+            
+            <blockquote class="daily-quote">
+                <p>把大问题分解成小问题，是解决复杂系统设计的通用钥匙。</p>
+            </blockquote>
+            
+        </div>
+    </div>
+    
+
+    <div class="widget widget-stats">
+        <h3 class="widget-title">统计</h3>
+        <div class="widget-body">
+            <ul>
+                <li>📝 文章总数: 11</li>
+                <li>📁 分类数: 21</li>
+                <li>🏷️ 标签数: 45</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+    
+    <article class="post-article">
+        <header class="article-header">
+            <h1 class="article-title">造物主的视角：如果让你亲手设计 ThreadLocal</h1>
+            <div class="post-meta">
+                <time>2025-12-02</time> · 5 分钟阅读
+                
+                · 分类: <a href="/categories/%E6%8A%80%E6%9C%AF">技术</a> <a href="/categories/java">Java</a> <a href="/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B">并发编程</a> <a href="/categories/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90">源码分析</a> 
+                
+                
+                · 标签: <a href="/tags/threadlocal">ThreadLocal</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a> <a href="/tags/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F">内存泄漏</a> <a href="/tags/%E5%BC%B1%E5%BC%95%E7%94%A8">弱引用</a> <a href="/tags/%E5%B9%B6%E5%8F%91">并发</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95">学习方法</a> 
+                
+            </div>
+        </header>
+        
+        
+        <div class="toc">
+            <details open>
+                <summary>目录</summary>
+                <nav class="toc-nav">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#写在前面缘起">写在前面：缘起</a></li>
+    <li><a href="#版本一朴素的全局-map">版本一：朴素的全局 Map</a></li>
+    <li><a href="#版本二去锁化--倒转关系">版本二：去锁化 —— 倒转关系</a></li>
+    <li><a href="#版本三弱引用的引入">版本三：弱引用的引入</a></li>
+    <li><a href="#版本四最终形态与遗留的坑">版本四：最终形态与遗留的坑</a></li>
+    <li><a href="#番外篇神奇的魔数-0x61c88647">番外篇：神奇的魔数 0x61c88647</a></li>
+    <li><a href="#总结造物主的权衡">总结：造物主的权衡</a></li>
+  </ul>
+</nav>
+                </nav>
+            </details>
+        </div>
+        
+
+        <div class="article-content">
+            <h2 id="写在前面缘起">写在前面：缘起</h2>
+<p><strong>这篇文章的诞生，并不是因为我对 ThreadLocal 有多深的认知，恰恰相反，是因为我曾经完全看不懂它。</strong></p>
+<p>面对源码中复杂的引用关系和神奇的魔数，我一度陷入了细节的泥沼。为了啃下这块硬骨头，我逼迫自己跳出来，不再去想&quot;它现在是什么样&quot;，而是去想&quot;如果是我，为了解决这个问题，我会把它设计成什么样&quot;。</p>
+<p>我发现，这种<strong>从开发者的角度出发，将一个复杂的大问题（实现线程私有）分解为一个个小问题（存储、并发、生命周期），一步一步递进解决的方法</strong>，不仅让我彻底理解了 ThreadLocal，更成为我攻克源码难关的一把钥匙。</p>
+<p>今天，就邀请你和我一起，用这种视角重走一遍 ThreadLocal 的诞生之路。</p>
+<hr>
+<p>我们在学习 <code>ThreadLocal</code> 时，容易陷入源码的细节，而忽略了宏观的设计脉络。</p>
+<p>今天我们换个视角：假设 Java 还没有 <code>ThreadLocal</code>，你作为 JDK 的首席架构师，接到了一个需求：<strong>设计一个工具，让每个线程都能绑定自己的私有数据，互不干扰。</strong></p>
+<p>我们将通过四个版本的迭代，重现 <code>ThreadLocal</code> 的诞生过程。</p>
+<h2 id="版本一朴素的全局-map">版本一：朴素的全局 Map</h2>
+<p>最直观的想法是：既然要存数据，肯定得有个 <code>Map</code>。既然要区分线程，那就用 <code>Thread</code> 对象作为 Key。</p>
+<p>于是，你设计了第一版 <code>ThreadLocal</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadLocal_V1</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 一个全局的、线程安全的 Map</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Map<span style="color:#f92672">&lt;</span>Thread, T<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>        Collections.<span style="color:#a6e22e">synchronizedMap</span>(<span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">set</span>(T value) {
+</span></span><span style="display:flex;"><span>        map.<span style="color:#a6e22e">put</span>(Thread.<span style="color:#a6e22e">currentThread</span>(), value);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">get</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> map.<span style="color:#a6e22e">get</span>(Thread.<span style="color:#a6e22e">currentThread</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>设计评审：</strong>
+这个方案能用吗？能用。但有两个致命缺陷：</p>
+<ol>
+<li><strong>性能瓶颈</strong>：所有线程都去争抢同一个全局 Map 的锁，并发量一大，性能直接爆炸。</li>
+<li><strong>内存泄漏</strong>：只要这个 <code>ThreadLocal</code> 对象不销毁，Map 里的 Entry 就永远存在。即使线程销毁了，Map 依然强引用着 Thread 对象，导致 Thread 对象无法被 GC 回收。</li>
+</ol>
+<h2 id="版本二去锁化--倒转关系">版本二：去锁化 —— 倒转关系</h2>
+<p>为了解决性能问题，我们必须<strong>去锁</strong>。
+既然多线程访问同一个 Map 会冲突，那为什么不<strong>给每个线程发一个 Map</strong> 呢？</p>
+<p>思路大逆转：<strong>数据不应该存在 ThreadLocal 里，而应该存在 Thread 身上！</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 伪代码，修改 Thread 类</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thread</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 每个线程自带一个 Map</span>
+</span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>ThreadLocal, Object<span style="color:#f92672">&gt;</span> threadLocals <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadLocal_V2</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">set</span>(T value) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 获取当前线程</span>
+</span></span><span style="display:flex;"><span>        Thread t <span style="color:#f92672">=</span> Thread.<span style="color:#a6e22e">currentThread</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 把自己（ThreadLocal）作为 Key，存入线程的 Map 中</span>
+</span></span><span style="display:flex;"><span>        t.<span style="color:#a6e22e">threadLocals</span>.<span style="color:#a6e22e">put</span>(<span style="color:#66d9ef">this</span>, value);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">get</span>() {
+</span></span><span style="display:flex;"><span>        Thread t <span style="color:#f92672">=</span> Thread.<span style="color:#a6e22e">currentThread</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (T) t.<span style="color:#a6e22e">threadLocals</span>.<span style="color:#a6e22e">get</span>(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>设计评审：</strong>
+这个改动是神来之笔！</p>
+<ol>
+<li><strong>无锁化</strong>：每个线程只访问自己的 Map，完全不存在并发冲突，性能起飞。</li>
+<li><strong>生命周期绑定</strong>：线程死了，线程对象被回收，它身上的 Map 自然也就销毁了，数据随之消失。</li>
+</ol>
+<p>看起来很完美？别急，还有一个隐蔽的内存泄漏问题。</p>
+<h2 id="版本三弱引用的引入">版本三：弱引用的引入</h2>
+<p>在版本二中，<code>Thread</code> 持有的 Map 是 <code>Map&lt;ThreadLocal, Object&gt;</code>。
+这里有一个强引用链：<code>Thread -&gt; Map -&gt; Key(ThreadLocal)</code>。</p>
+<p><strong>场景推演</strong>：
+假设你在在一个 Tomcat 线程池中，创建了一个临时的 <code>ThreadLocal</code> 对象用完即扔：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doSomething</span>() {
+</span></span><span style="display:flex;"><span>    ThreadLocal<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> tl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadLocal<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>    tl.<span style="color:#a6e22e">set</span>(<span style="color:#66d9ef">new</span> User(<span style="color:#e6db74">&#34;Jixia&#34;</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 方法结束，tl 局部变量消失</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>方法结束后，栈上的 <code>tl</code> 引用消失了。我们期望这个 <code>ThreadLocal</code> 对象被 GC 回收。
+但是！<strong>当前线程（Thread）还在运行（线程池复用），它的 Map 里依然强引用着这个 ThreadLocal 对象作为 Key。</strong></p>
+<p>结果：虽然你代码里已经没有地方能访问到这个 <code>tl</code> 了，但它依然无法被回收。这就是内存泄漏。</p>
+<p><strong>解决方案</strong>：
+把 Map 的 Key 设计为<strong>弱引用（WeakReference）</strong>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Entry</span> <span style="color:#66d9ef">extends</span> WeakReference<span style="color:#f92672">&lt;</span>ThreadLocal<span style="color:#f92672">&lt;?&gt;&gt;</span> {
+</span></span><span style="display:flex;"><span>    Object value;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    Entry(ThreadLocal<span style="color:#f92672">&lt;?&gt;</span> k, Object v) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(k); <span style="color:#75715e">// Key 是弱引用</span>
+</span></span><span style="display:flex;"><span>        value <span style="color:#f92672">=</span> v; <span style="color:#75715e">// Value 是强引用</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>一旦外部没有强引用指向 <code>ThreadLocal</code> 对象，下一次 GC 时，Key 就会被回收（变成 null）。</p>
+<h2 id="版本四最终形态与遗留的坑">版本四：最终形态与遗留的坑</h2>
+<p>这就完美了吗？还没有。
+Key 虽然变成了 null（被回收了），但 <strong>Value 依然是强引用！</strong></p>
+<p><code>Thread -&gt; Map -&gt; Entry -&gt; Value(User对象)</code></p>
+<p>如果线程一直不死（比如线程池），这个 Value 对象就会一直存在，虽然它已经永远无法被访问到了（因为 Key 丢了）。这就是 <code>ThreadLocal</code> 著名的<strong>内存泄漏</strong>根源。</p>
+<p><strong>补救措施（JDK 的做法）</strong>：
+既然无法完全避免，那就采用&quot;<strong>惰性清理</strong>&ldquo;策略。
+在调用 <code>set()</code>、<code>get()</code>、<code>remove()</code> 方法时，<code>ThreadLocalMap</code> 会顺手检查一下：<em>&ldquo;咦，这个 Entry 的 Key 怎么是 null？说明它对应的 ThreadLocal 已经被回收了，那这个 Entry 就是垃圾，我把它清理掉。&rdquo;</em></p>
+<p>这就是为什么最佳实践要求我们：<strong>用完 ThreadLocal 必须手动调用 remove()</strong>。</p>
+<h2 id="番外篇神奇的魔数-0x61c88647">番外篇：神奇的魔数 0x61c88647</h2>
+<p>在阅读源码时，你一定会遇到一个神秘的数字：<code>0x61c88647</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> HASH_INCREMENT <span style="color:#f92672">=</span> 0x61c88647;
+</span></span></code></pre></div><p>这并不是乱写的。它是 <strong>黄金分割数</strong>（Golden Ratio）与 $2^{32}$ 的乘积：
+$$ ( \sqrt{5} - 1 ) / 2 \times 2^{32} \approx 1640531527 $$</p>
+<p><strong>为什么要用它？</strong>
+ThreadLocalMap 采用的是&quot;线性探测法&quot;解决哈希冲突（而不是 HashMap 的链表法）。使用这个魔数作为哈希增量，可以让生成的哈希码在数组中分布得<strong>极其均匀</strong>，最大程度地减少哈希冲突，从而保证了极高的存取效率。</p>
+<p>这也是 JDK 工程师在细节上的极致追求。</p>
+<h2 id="总结造物主的权衡">总结：造物主的权衡</h2>
+<p>回顾整个设计过程，我们看到了三次关键的权衡：</p>
+<ol>
+<li><strong>空间换时间</strong>：从&quot;全局 Map&quot;变为&quot;线程独享 Map&rdquo;，消除了锁竞争。</li>
+<li><strong>倒置依赖</strong>：数据不存 <code>ThreadLocal</code>，而是存 <code>Thread</code>，实现了生命周期的部分绑定。</li>
+<li><strong>弱引用机制</strong>：为了解决 Key 的泄漏，引入弱引用，但同时也带来了 Value 泄漏的新问题，最终通过&quot;惰性清理&quot;+&ldquo;手动 remove&quot;来兜底。</li>
+</ol>
+<p>没有任何设计是完美的，<code>ThreadLocal</code> 的演进史，就是一部在<strong>性能</strong>与<strong>内存安全</strong>之间走钢丝的历史。</p>
+
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const article = document.querySelector('.post-article');
+            const tocLinks = document.querySelectorAll('.toc-nav a');
+            
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement && article) {
+                        const articleRect = article.getBoundingClientRect();
+                        const targetRect = targetElement.getBoundingClientRect();
+                        const scrollTop = article.scrollTop;
+                        const offset = targetRect.top - articleRect.top + scrollTop - 20;
+                        
+                        article.scrollTo({
+                            top: offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        </script>
+
+        <div class="post-nav" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between;">
+            
+            <a href="/posts/object-class-design/">← 万物之祖：重新审视 Java Object 类的设计与缺陷</a>
+            
+            
+            <a href="/posts/refuse-thread-sleep/">拒绝 Thread.sleep！基于“线程池&#43;延迟任务”的高性能异步系统设计 →</a>
+            
+        </div>
+    </article>
+
+    <aside class="sidebar">
+    <div class="widget widget-author">
+        <h3 class="widget-title">关于我</h3>
+        <div class="widget-body">
+            <p>个人博客</p>
+            <a href="/posts/about/" class="widget-link">了解更多 →</a>
+        </div>
+    </div>
+
+    
+    <div class="widget widget-categories">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget-body">
+            <ul>
+                
+                <li><a href="/categories/devops">devops</a> (1)</li>
+                
+                <li><a href="/categories/java">java</a> (2)</li>
+                
+                <li><a href="/categories/web%E5%BC%80%E5%8F%91">web开发</a> (1)</li>
+                
+                <li><a href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97">云计算</a> (1)</li>
+                
+                <li><a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91">后端开发</a> (4)</li>
+                
+                <li><a href="/categories/%E5%AE%B9%E5%99%A8%E5%8C%96">容器化</a> (1)</li>
+                
+                <li><a href="/categories/%E5%B7%A5%E5%85%B7">工具</a> (1)</li>
+                
+                <li><a href="/categories/%E5%B9%B6%E5%8F%91">并发</a> (2)</li>
+                
+                <li><a href="/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B">并发编程</a> (1)</li>
+                
+                <li><a href="/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">性能优化</a> (2)</li>
+                
+                <li><a href="/categories/%E6%8A%80%E6%9C%AF">技术</a> (7)</li>
+                
+                <li><a href="/categories/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87">效率提升</a> (1)</li>
+                
+                <li><a href="/categories/%E6%95%99%E7%A8%8B">教程</a> (1)</li>
+                
+                <li><a href="/categories/%E6%96%87%E6%A1%A3%E7%BC%96%E5%86%99">文档编写</a> (1)</li>
+                
+                <li><a href="/categories/%E6%9E%B6%E6%9E%84">架构</a> (2)</li>
+                
+                <li><a href="/categories/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90">源码分析</a> (2)</li>
+                
+                <li><a href="/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F">生活感悟</a> (1)</li>
+                
+                <li><a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80">编程语言</a> (2)</li>
+                
+                <li><a href="/categories/%E8%BF%90%E7%BB%B4">运维</a> (1)</li>
+                
+                <li><a href="/categories/%E9%9A%8F%E7%AC%94">随笔</a> (1)</li>
+                
+                <li><a href="/categories/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99">静态网站</a> (1)</li>
+                
+            </ul>
+        </div>
+    </div>
+    
+
+    
+    <div class="widget widget-tags">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget-body tags-cloud">
+            
+            <a href="/tags/ci/cd">ci/cd</a>
+            
+            <a href="/tags/devops">devops</a>
+            
+            <a href="/tags/docker">docker</a>
+            
+            <a href="/tags/gc">gc</a>
+            
+            <a href="/tags/github-pages">github pages</a>
+            
+            <a href="/tags/go">go</a>
+            
+            <a href="/tags/hugo">hugo</a>
+            
+            <a href="/tags/java">java</a>
+            
+            <a href="/tags/jvm">jvm</a>
+            
+            <a href="/tags/kubernetes">kubernetes</a>
+            
+            <a href="/tags/markdown">markdown</a>
+            
+            <a href="/tags/object">object</a>
+            
+            <a href="/tags/redis">redis</a>
+            
+            <a href="/tags/threadlocal">threadlocal</a>
+            
+            <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF">个人成长</a>
+            
+            <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F">云原生</a>
+            
+            <a href="/tags/%E5%85%A5%E9%97%A8">入门</a>
+            
+            <a href="/tags/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F">内存泄漏</a>
+            
+            <a href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86">内存管理</a>
+            
+            <a href="/tags/%E5%86%99%E4%BD%9C">写作</a>
+            
+            <a href="/tags/%E5%8D%9A%E5%AE%A2">博客</a>
+            
+            <a href="/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6">垃圾回收</a>
+            
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95">学习方法</a>
+            
+            <a href="/tags/%E5%AE%B9%E5%99%A8">容器</a>
+            
+            <a href="/tags/%E5%B9%B6%E5%8F%91">并发</a>
+            
+            <a href="/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B">并发编程</a>
+            
+            <a href="/tags/%E5%BC%80%E5%A7%8B">开始</a>
+            
+            <a href="/tags/%E5%BC%B1%E5%BC%95%E7%94%A8">弱引用</a>
+            
+            <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1">微服务</a>
+            
+            <a href="/tags/%E6%80%A7%E8%83%BD">性能</a>
+            
+            <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">性能优化</a>
+            
+            <a href="/tags/%E6%96%87%E6%A1%A3">文档</a>
+            
+            <a href="/tags/%E6%9E%B6%E6%9E%84">架构</a>
+            
+            <a href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96">格式化</a>
+            
+            <a href="/tags/%E7%94%9F%E4%BA%A7%E5%8A%9B">生产力</a>
+            
+            <a href="/tags/%E7%AC%94%E8%AE%B0">笔记</a>
+            
+            <a href="/tags/%E7%BA%BF%E7%A8%8B%E6%B1%A0">线程池</a>
+            
+            <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8">编辑器</a>
+            
+            <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a>
+            
+            <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2">自动化部署</a>
+            
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a>
+            
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E7%BC%BA%E9%99%B7">设计缺陷</a>
+            
+            <a href="/tags/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86">资源管理</a>
+            
+            <a href="/tags/%E9%83%A8%E7%BD%B2">部署</a>
+            
+            <a href="/tags/%E9%95%9C%E5%83%8F">镜像</a>
+            
+        </div>
+    </div>
+    
+
+    <div class="widget widget-recent">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget-body">
+            <ul>
+                
+                <li><a href="/posts/java-thread-pool-architecture/">关于Java线程池的思考</a></li>
+                
+                <li><a href="/posts/refuse-thread-sleep/">拒绝 Thread.sleep！基于“线程池&#43;延迟任务”的高性能异步系统设计</a></li>
+                
+                <li><a href="/posts/threadlocal-design-thinking/">造物主的视角：如果让你亲手设计 ThreadLocal</a></li>
+                
+                <li><a href="/posts/object-class-design/">万物之祖：重新审视 Java Object 类的设计与缺陷</a></li>
+                
+                <li><a href="/posts/java-gc-generation/">灰姑娘、贵族与垃圾回收：用&#34;双层舞会&#34;模型解构 Java GC 分代思想</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</aside>
+
+</div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 季夏. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    
+    if (searchInput) {
+        const posts = [
+            
+            {
+                title: "\"关于Java线程池的思考\"",
+                url: "https:\/\/jixia8.github.io\/posts\/java-thread-pool-architecture\/",
+                date: "2025-12-04",
+                summary: "\"从一张直观的架构图出发，深入解析 Java 线程池的核心参数与设计哲学，反思 I/O 密集型场景下的局限性，并探讨动态线程池的未来方向。\""
+            },
+            
+            {
+                title: "\"拒绝 Thread.sleep！基于“线程池+延迟任务”的高性能异步系统设计\"",
+                url: "https:\/\/jixia8.github.io\/posts\/refuse-thread-sleep\/",
+                date: "2025-12-03",
+                summary: "\"用线程池 + 延迟任务替代 Thread.sleep 的架构设计与实现思路，包括 Redis ZSet 示例与内存优化策略。\""
+            },
+            
+            {
+                title: "\"造物主的视角：如果让你亲手设计 ThreadLocal\"",
+                url: "https:\/\/jixia8.github.io\/posts\/threadlocal-design-thinking\/",
+                date: "2025-12-02",
+                summary: "\"写在前面：缘起 这篇文章的诞生，并不是因为我对 ThreadLocal 有多深的认知，恰恰相反，是因为我曾经完全看不懂它。\\n面对源码中复杂的引用关系和神奇的魔数，我一度陷入了细节的泥沼。为了啃下这块硬 …\""
+            },
+            
+            {
+                title: "\"万物之祖：重新审视 Java Object 类的设计与缺陷\"",
+                url: "https:\/\/jixia8.github.io\/posts\/object-class-design\/",
+                date: "2025-12-02",
+                summary: "\"在 Java 世界中，java.lang.Object 是万物之祖：所有类都直接或间接继承自它。 重读 Object 源码后，你会发现它既有语言设计上的精华，也背负了不少历史包袱。本文从方法级别出发， …\""
+            },
+            
+            {
+                title: "\"灰姑娘、贵族与垃圾回收：用\\\"双层舞会\\\"模型解构 Java GC 分代思想\"",
+                url: "https:\/\/jixia8.github.io\/posts\/java-gc-generation\/",
+                date: "2025-12-02",
+                summary: "\"灰姑娘、贵族与垃圾回收：用\\u0026quot;双层舞会\\u0026quot;模型解构 Java GC 分代思想 摘要：你是否想过，Java 虚拟机（JVM）管理内存的方式，像极了一场精心设计的皇家选妃？本文不谈枯燥的算 …\""
+            },
+            
+            {
+                title: "\"Go语言初体验\"",
+                url: "https:\/\/jixia8.github.io\/posts\/go-first-impression\/",
+                date: "2025-12-02",
+                summary: "\"为什么选择 Go 最近开始学习 Go 语言，发现它有很多吸引人的特点。\\n简洁的语法 Go 的语法非常简洁，没有 Java 那么繁琐。一个简单的 Hello World：\\npackage main …\""
+            },
+            
+            {
+                title: "\"Hugo博客搭建指南\"",
+                url: "https:\/\/jixia8.github.io\/posts\/hugo-guide\/",
+                date: "2025-12-02",
+                summary: "\"前言 使用 Hugo 和 GitHub Pages 搭建个人博客是一个简单又高效的方案。本文记录了我搭建这个博客的完整过程。\\n什么是 Hugo Hugo 是一个用 Go 语言编写的静态网站生成器，具有 …\""
+            },
+            
+            {
+                title: "\"欢迎来到我的博客\"",
+                url: "https:\/\/jixia8.github.io\/posts\/welcome\/",
+                date: "2025-12-02",
+                summary: "\"关于这个博客 这是我的个人博客，用来记录学习和生活中的点滴。\\n我会写什么 在这个博客里，我会分享：\\n技术学习笔记 项目开发经验 生活感悟与思考 读书笔记 为什么要写博客 写博客是一个很好的习惯：\\n整理 …\""
+            },
+            
+            {
+                title: "\"Markdown写作技巧\"",
+                url: "https:\/\/jixia8.github.io\/posts\/markdown-tips\/",
+                date: "2025-12-02",
+                summary: "\"Markdown 简介 Markdown 是一种轻量级标记语言，让你专注于内容而不是格式。\\n基础语法 标题 使用 # 创建标题，几个 # 就是几级标题。\\n强调 粗体：使用 **文字** 斜体：使用 * …\""
+            },
+            
+            {
+                title: "\"关于我\"",
+                url: "https:\/\/jixia8.github.io\/posts\/about\/",
+                date: "2025-12-02",
+                summary: "\"👋 你好，我是季夏 欢迎来到我的个人博客！这里是我记录学习、分享技术、思考人生的地方。\\n🎯 关于这个博客 这个博客创建于 2025 年，使用 Hugo 搭建，托管在 GitHub Pages 上。我希 …\""
+            },
+            
+            {
+                title: "\"Docker容器化部署实践\"",
+                url: "https:\/\/jixia8.github.io\/posts\/docker-deployment\/",
+                date: "2025-12-01",
+                summary: "\"Docker 简介 Docker 是容器化技术的代表。\\n基本命令 docker build -t myapp . docker run -p 8080:8080 myapp Kubernetes 容器 …\""
+            },
+            
+        ];
+
+        let selectedIndex = -1;
+
+        function updateResults(query) {
+            if (query.length < 2) {
+                searchResults.classList.remove('active');
+                selectedIndex = -1;
+                return;
+            }
+
+            const results = posts.filter(post => 
+                post.title.toLowerCase().includes(query) || 
+                post.summary.toLowerCase().includes(query)
+            ).slice(0, 8);
+
+            if (results.length > 0) {
+                searchResults.innerHTML = results.map((post, index) => `
+                    <a href="${post.url}" class="search-result-item" data-index="${index}">
+                        <div class="search-result-title">${post.title}</div>
+                        <div class="search-result-meta">${post.date}</div>
+                    </a>
+                `).join('');
+                searchResults.classList.add('active');
+                selectedIndex = -1;
+            } else {
+                searchResults.innerHTML = '<div class="search-result-item no-click">未找到相关文章</div>';
+                searchResults.classList.add('active');
+                selectedIndex = -1;
+            }
+        }
+
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            updateResults(query);
+        });
+
+        
+        searchInput.addEventListener('keydown', function(e) {
+            const items = searchResults.querySelectorAll('.search-result-item:not(.no-click)');
+            
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (selectedIndex === -1) {
+                    selectedIndex = 0;
+                } else {
+                    selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+                }
+                updateSelection(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectedIndex = Math.max(selectedIndex - 1, -1);
+                updateSelection(items);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selectedIndex >= 0 && items[selectedIndex]) {
+                    window.location.href = items[selectedIndex].href;
+                }
+            } else if (e.key === 'Escape') {
+                searchResults.classList.remove('active');
+                selectedIndex = -1;
+            }
+        });
+
+        function updateSelection(items) {
+            items.forEach((item, index) => {
+                if (index === selectedIndex) {
+                    item.classList.add('selected');
+                } else {
+                    item.classList.remove('selected');
+                }
+            });
+        }
+
+        
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.remove('active');
+                selectedIndex = -1;
+            }
+        });
+    }
+    </script>
+
+</body>
+</html>

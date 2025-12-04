@@ -1,5 +1,5 @@
 ---
-title: "深入理解 Java 线程池——从图形记忆到架构反思"
+title: "关于Java线程池的思考"
 date: 2025-12-04T10:00:00+08:00
 draft: false
 categories: ["后端开发", "架构", "并发"]

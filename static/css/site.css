@@ -1022,3 +1022,54 @@ a:hover { color: var(--primary-hover); }
     #search-input { width: 150px; }
     #search-input:focus { width: 180px; }
 }
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+    gap: 8px;
+}
+
+.page-item {
+    margin: 0;
+}
+
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.page-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--bg-body);
+    transform: translateY(-1px);
+}
+
+.page-item.active .page-link {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.page-item.disabled .page-link {
+    color: var(--text-muted);
+    pointer-events: none;
+    background: var(--bg-body);
+    opacity: 0.6;
+}
+

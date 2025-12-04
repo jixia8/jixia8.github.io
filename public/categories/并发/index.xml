@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>并发 on 季夏的个人博客</title>
+    <link>https://jixia8.github.io/categories/%E5%B9%B6%E5%8F%91/</link>
+    <description>Recent content in 并发 on 季夏的个人博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 04 Dec 2025 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://jixia8.github.io/categories/%E5%B9%B6%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于Java线程池的思考</title>
+      <link>https://jixia8.github.io/posts/java-thread-pool-architecture/</link>
+      <pubDate>Thu, 04 Dec 2025 10:00:00 +0800</pubDate>
+      <guid>https://jixia8.github.io/posts/java-thread-pool-architecture/</guid>
+      <description>从一张直观的架构图出发，深入解析 Java 线程池的核心参数与设计哲学，反思 I/O 密集型场景下的局限性，并探讨动态线程池的未来方向。</description>
+    </item>
+    <item>
+      <title>拒绝 Thread.sleep！基于“线程池&#43;延迟任务”的高性能异步系统设计</title>
+      <link>https://jixia8.github.io/posts/refuse-thread-sleep/</link>
+      <pubDate>Wed, 03 Dec 2025 09:00:00 +0800</pubDate>
+      <guid>https://jixia8.github.io/posts/refuse-thread-sleep/</guid>
+      <description>用线程池 + 延迟任务替代 Thread.sleep 的架构设计与实现思路，包括 Redis ZSet 示例与内存优化策略。</description>
+    </item>
+  </channel>
+</rss>
