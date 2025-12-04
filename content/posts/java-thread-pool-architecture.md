@@ -15,7 +15,6 @@ notes:
 在《Java 性能调优实战》中，有一张非常直观的线程池抽象图。通过这张图，我们可以将复杂的 `ThreadPoolExecutor` 构造函数迅速映射为视觉模型，从而轻松记住那 7 个令人生畏的核心参数：
 
 ![线程池核心参数图](/images/thread-pool-architecture.png)
-*(注：请将文章配图保存为 static/images/thread-pool-architecture.png)*
 
 *   **左侧（任务队列）**：对应 `workQueue`。这是保存待执行代码的地方。
 *   **右侧（线程容器）**：
